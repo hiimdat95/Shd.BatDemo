@@ -1,0 +1,64 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "CHOVAY": [
+            {
+              "HD001": "Số hợp đồng tín dụng",
+              "KHEUOC": [
+                {
+                  "KU001": "Số khế ước",
+                  "KU009": "Mã tiền tệ",
+                  "KU028": [
+                    {
+                      "KU0281": "Số tiền phát sinh giải ngân",
+                      "KU0282": "Ngày phát sinh giải ngân"
+                    }
+                  ],
+                  "KU029": [
+                    {
+                      "KU0291": "Số tiền phát sinh trả nợ",
+                      "KU0292": "Ngày phát sinh trả nợ"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "NHANUT": [
+            {
+              "NHD01": "Số hợp đồng tín dụng",
+              "KHEUOC": [
+                {
+                  "NKU01": "Số khế ước",
+                  "NKU07": "Mã tiền tệ",
+                  "NKU17": [
+                    {
+                      "NKU171": "Số tiền phát sinh giải ngân",
+                      "NKU172": "Ngày phát sinh giải ngân"
+                    }
+                  ],
+                  "NKU18": [
+                    {
+                      "NKU181": "Số tiền phát sinh trả nợ",
+                      "NKU182": "Ngày phát sinh trả nợ"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

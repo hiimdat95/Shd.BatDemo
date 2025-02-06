@@ -1,0 +1,88 @@
+﻿@using BatDemo.Web.Components.Common
+@using BatDemo.Web.Startup
+@using BatDemo.Web.Models.Users
+@using static BatDemo.Web.Components.Common.BreadcrumbComponent
+@model UserListViewModel
+@{
+    ViewBag.Title = L("Users");
+    ViewBag.CurrentPageName = PageNames.Users;
+
+    List<BreadcrumbItem> Breadcrumb = new List<BreadcrumbItem> {
+        new BreadcrumbItem(L("Users"))
+    };
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Users/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Users/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid tw-flex tw-items-center tw-justify-between">
+        <component type="typeof(BreadcrumbComponent)" render-mode="Server" param-DataItems="Breadcrumb" />
+        <div>
+            <a href="javascript:;" data-toggle="modal" data-target="#UserCreateModal" class="btn bg-blue btn-sm float-sm-right">
+                <i class="fa fa-plus"></i>
+                @L("Create")
+            </a>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <!--Use for bulk actions-->
+                            </div>
+                            <div class="col-md-4">
+                                @await Html.PartialAsync("~/Views/Users/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="UsersTable" class="!tw-border-none table-bordered table-striped table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">@L("UserName")</th>
+                                        <th scope="col">@L("FullName")</th>
+                                        <th scope="col">@L("EmailAddress")</th>
+                                        <th scope="col">@L("IsActive")</th>
+                                        <th scope="col" style="width: 150px">@L("Actions")</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("~/Views/Users/_CreateModal.cshtml", Model)
+
+<div class="modal fade" id="UserEditModal" tabindex="-1" role="dialog" aria-labelledby="UserEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

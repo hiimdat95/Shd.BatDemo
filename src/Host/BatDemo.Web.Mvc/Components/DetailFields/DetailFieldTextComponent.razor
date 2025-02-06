@@ -1,0 +1,12 @@
+﻿<div class="DetailField">
+    <span class="col-md-3 col-form-label">@Label :</span>
+    <span class="col-md-9 tw-flex tw-items-center">@(Value ?? "N/A")</span>
+</div>
+
+@code {
+    [Parameter]
+    public string Label { get; set; }
+
+    [Parameter]
+    public dynamic Value { get; set; }
+}

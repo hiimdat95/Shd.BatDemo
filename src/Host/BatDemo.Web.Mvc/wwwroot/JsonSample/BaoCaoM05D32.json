@@ -1,0 +1,157 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "KB005": "Vốn tự có của TCTD",
+  "KB006": "Dự phòng chung phải trích",
+  "KB007": "Dự phòng chung đã trích",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "CHOVAY": [
+            {
+              "HD001": "Số hợp đồng tín dụng",
+              "HD002": "Ngày hiệu lực hợp đồng",
+              "HD003": "Ngày kết thúc hợp đồng",
+              "HD004": "Thời hạn cấp tín dụng (ngày)",
+              "HD005": "Trạng thái Tài sản bảo đảm (TSBĐ)",
+              "HD006": [
+                {
+                  "HD0061": "Mã tiền tệ",
+                  "HD0062": "Hạn mức tín dụng trên hợp đồng"
+                }
+              ],
+              "HD007": [
+                {
+                  "HD0071": "Mã khách hàng người đồng vay vốn",
+                  "HD0072": "Họ và tên người đồng vay vốn",
+                  "HD0073": "Số CCCD của người đồng vay vốn",
+                  "HD0074": "CMND của người đồng vay vốn",
+                  "HD0075": "Hộ chiếu của người đồng vay vốn",
+                  "HD0076": "Ngày sinh của người đồng vay vốn",
+                  "HD0077": "Số điện thoại người đồng vay vốn",
+                  "HD0078": "Địa chỉ người đồng vay vốn",
+                  "HD0079": "Quan hệ với khách hàng vay"
+                }
+              ],
+              "KHEUOC": [
+                {
+                  "KU001": "Số khế ước",
+                  "KU002": "Ngày giải ngân",
+                  "KU003": "Ngày kết thúc khế ước",
+                  "KU004": "Hoạt động cấp tín dụng bằng phương tiện điện tử",
+                  "KU005": "Mã thời hạn cấp tín dụng",
+                  "KU006": "Hình thức cấp tín dụng",
+                  "KU007": "Phương thức cho vay",
+                  "KU008": "Thời điểm truy đòi",
+                  "KU009": "Mã tiền tệ",
+                  "KU010": "Số dư nợ theo nguyên tệ",
+                  "KU011": "Lãi suất",
+                  "KU012": "Nhóm nợ tự phân loại",
+                  "KU013": "Nhóm nợ phân loại sau khi tham chiếu CIC",
+                  "KU014": "Dư nợ gốc chậm trả thực tế",
+                  "KU015": "Ngày chậm trả nợ gốc",
+                  "KU016": "Số tiền lãi chậm trả thực tế",
+                  "KU017": "Ngày chậm trả nợ lãi",
+                  "KU018": "Số lần cơ cấu lại thời hạn trả nợ",
+                  "KU019": "Số tiền nợ gốc cơ cấu",
+                  "KU020": "Số tiền nợ lãi cơ cấu",
+                  "KU021": "Mục đích sử dụng tiền vay phân theo ngành kinh tế",
+                  "KU022": [
+                    "Mục đích sử dụng tiền vay đối với lĩnh vực"
+                  ],
+                  "KU023": "Mô tả mục đích sử dụng tiền vay",
+                  "KU024": "Lãi phải thu hạch toán nội bảng",
+                  "KU025": "Lãi chưa thu hạch toán ngoại bảng",
+                  "KU026": "Dự phòng cụ thể phải trích nội bảng",
+                  "KU027": "Dự phòng cụ thể đã trích nội bảng"
+                }
+              ]
+            }
+          ],
+          "CAMKETNGB": [
+            {
+              "CK001": "Số hợp đồng",
+              "CK002": "Ngày hiệu lực hợp đồng",
+              "CK003": "Ngày kết thúc hợp đồng",
+              "CK004": "Trạng thái TSBĐ",
+              "CTCKNGB": [
+                {
+                  "CT001": "Số cam kết ngoại bảng",
+                  "CT002": "Ngày bắt đầu có hiệu lực",
+                  "CT003": "Ngày kết thúc hiệu lực",
+                  "CT004": "Ngày hết hạn thực tế",
+                  "CT005": "Hoạt động cam kết ngoại bảng bằng phương tiện điện tử",
+                  "CT006": "Mã loại nghiệp vụ",
+                  "CT007": "Mã tiền tệ",
+                  "CT008": "Số dư cam kết",
+                  "CT009": "Nội dung cam kết",
+                  "CT010": "Nhóm nợ tự phân loại",
+                  "CT011": "Nhóm nợ phân loại sau khi tham chiếu CIC"
+                }
+              ]
+            }
+          ],
+          "NOXLRR": [
+            {
+              "NGB01": "Số hợp đồng tín dụng",
+              "NGB02": "Trạng thái TSBĐ",
+              "DUNO": [
+                {
+                  "NGB03": "Mã tiền tệ",
+                  "NGB04": "Số dư nợ gốc đã xử lý bằng quỹ dự phòng rủi ro đưa ra theo dõi ngoại bảng theo nguyên tệ"
+                }
+              ]
+            }
+          ],
+          "NHANUT": [
+            {
+              "NHD01": "Số hợp đồng tín dụng",
+              "NHD02": "Tên đơn vị/cá nhân ủy thác",
+              "NHD03": "CCCD/CMND/Hộ chiếu của người ủy thác",
+              "NHD04": "Mã số thuế đơn vị ủy thác",
+              "NHD05": "Ngày hiệu lực hợp đồng",
+              "NHD06": "Ngày kết thúc hợp đồng",
+              "NHD07": "Thời hạn cấp tín dụng (ngày)",
+              "NHD08": "Trạng thái TSBĐ",
+              "NHD09": [
+                {
+                  "NHD091": "Mã tiền tệ",
+                  "NHD092": "Số hạn mức tín dụng trên hợp đồng"
+                }
+              ],
+              "KHEUOC": [
+                {
+                  "NKU01": "Số khế ước",
+                  "NKU02": "Ngày giải ngân",
+                  "NKU03": "Ngày kết thúc khế ước",
+                  "NKU04": "Mã thời hạn cấp tín dụng",
+                  "NKU05": "Hình thức cấp tín dụng",
+                  "NKU06": "Phương thức cho vay",
+                  "NKU07": "Mã tiền tệ",
+                  "NKU08": "Số dư nợ theo nguyên tệ",
+                  "NKU09": "Lãi suất",
+                  "NKU10": "Dư nợ gốc chậm trả thực tế",
+                  "NKU11": "Ngày chậm trả nợ gốc",
+                  "NKU12": "Số tiền lãi chậm trả thực tế",
+                  "NKU13": "Ngày chậm trả nợ lãi",
+                  "NKU14": "Mục đích sử dụng tiền vay phân theo ngành kinh tế",
+                  "NKU15": [
+                    "Mục đích sử dụng tiền vay đối với lĩnh vực: đầu tư kinh doanh bất động sản, phục vụ đời sống, tiêu dùng, đầu tư kinh doanh chứng khoán"
+                  ],
+                  "NKU16": "Mô tả mục đích sử dụng tiền vay"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

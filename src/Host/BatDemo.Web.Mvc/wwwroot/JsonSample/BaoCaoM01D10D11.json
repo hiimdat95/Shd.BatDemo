@@ -1,0 +1,83 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "TOCHUC": [
+    {
+      "TTC03": "Mã khách hàng do TCTD cấp",
+      "TTC04": "Tên khách hàng",
+      "TC001": "Tên đối ngoại",
+      "TC002": "Tên viết tắt",
+      "TC003": "Tên cũ",
+      "TC004": "Địa chỉ",
+      "TC005": "Mã tỉnh, thành phố trực thuộc trung ương",
+      "TC006": "Cư trú",
+      "TC007": "Điện thoại",
+      "TC008": "Fax",
+      "TC009": "Website",
+      "TC010": "Email",
+      "TC011": "Mã số doanh nghiệp",
+      "TC012": "Ngày cấp mã số doanh nghiệp",
+      "TC013": "Số quyết định thành lập",
+      "TC014": "Ngày cấp quyết định thành lập",
+      "TC015": "Số Giấy phép đầu tư",
+      "TC016": "Ngày cấp giấy phép đầu tư",
+      "TC017": "Mã loại hình doanh nghiệp/tổ chức khác",
+      "TC018": "Mã ngành nghề kinh doanh",
+      "TC019": "Tổng Giám đốc/Giám đốc",
+      "TC020": "Địa chỉ Tổng Giám đốc/Giám đốc",
+      "TC021": "Số CCCD/CMND/Hộ chiếu Tổng Giám đốc/Giám đốc",
+      "TC022": "Là thành viên của Quỹ tín dụng nhân dân",
+      "TC023": "Là thành viên của Ngân hàng hợp tác xã",
+      "TC024": [
+        {
+          "TC0241": "Mã tiền tệ",
+          "TC0242": "Số tiền vốn điều lệ"
+        }
+      ],
+      "TC025": [
+        {
+          "TC0251": "Họ và tên người đại diện theo pháp luật",
+          "TC0252": "Số CCCD/CMND/Hộ chiếu người đại diện theo pháp luật",
+          "TC0253": "Địa chỉ người đại diện theo pháp luật"
+        }
+      ],
+      "TC026": [
+        {
+          "TC0261": "Họ và tên thành viên HĐQT/HĐTV",
+          "TC0262": "Số CCCD/CMND/Hộ chiếu HĐQT/HĐTV",
+          "TC0263": "Địa chỉ thành viên HĐQT/HĐTV"
+        }
+      ]
+    }
+  ],
+  "CANHAN": [
+    {
+      "TTC03": "Mã khách hàng do TCTD cấp",
+      "TTC04": "Tên khách hàng",
+      "CN001": "Giới tính",
+      "CN002": "Ngày sinh",
+      "CN003": "Địa chỉ",
+      "CN004": "Mã tỉnh, thành phố trực thuộc trung ương",
+      "CN005": "Cư trú",
+      "CN006": "Số điện thoại",
+      "CN007": "Mã Quốc tịch",
+      "CN008": "Số CCCD",
+      "CN009": "Ngày cấp CCCD",
+      "CN010": "Số CMT",
+      "CN011": "Số hộ chiếu",
+      "CN012": "Mã số thuế",
+      "CN013": "Ngày cấp mã số thuế",
+      "CN014": "Số đăng ký kinh doanh",
+      "CN015": "Ngày cấp đăng ký kinh doanh",
+      "CN016": "Họ và tên vợ hoặc chồng",
+      "CN017": "Số CCCD/CMND/Hộ chiếu của vợ/chồng",
+      "CN018": "Nơi làm việc",
+      "CN019": "Vị trí làm việc",
+      "CN020": "Số năm làm việc",
+      "CN021": "Thu nhập bình quân hàng tháng",
+      "CN022": "Là thành viên của Quỹ TDND"
+    }
+  ]
+}

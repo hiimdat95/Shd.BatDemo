@@ -1,0 +1,14 @@
+﻿<div class="DetailField">
+    <span class="col-md-3 col-form-label">@Label :</span>
+    <span class="col-md-9">@(Value != null ? (ms): "N/A")</span>
+</div>
+
+@code {
+    [Parameter]
+    public string Label { get; set; }
+
+    [Parameter]
+    public dynamic Value { get; set; }
+
+    MarkupString ms => (MarkupString)Value;
+}

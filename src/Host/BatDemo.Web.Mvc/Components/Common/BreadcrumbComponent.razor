@@ -1,0 +1,37 @@
+﻿@using BatDemo.Localization
+
+<div class="tw-flex tw-items-center tw-space-x-3 tw-text-base tw-px-1 tw-leading-none tw-flex-wrap 2xl:tw-text-base">
+    <a href="/" class="tw-flex tw-items-center tw-text-secondary hover:tw-text-brand">
+        <i class="fas fa-home tw-mr-2 tw-text-sm 2xl:tw-text-sm" />
+        <span class="tw-flex-1">@LC.L("HomePage")</span>
+    </a>
+    @foreach (var item in DataItems)
+    {
+        <i class="fas fa-chevron-right tw-text-sm tw-text-secondary 2xl:tw-text-sm" />
+        @if (!string.IsNullOrEmpty(item.Url))
+        {
+            <a href="@item.Url" class="tw-text-secondary hover:tw-text-brand">@item.Title</a>
+        }
+        else
+        {
+            <span class="tw-text-black">@item.Title</span>
+        }
+    }
+</div>
+
+@code {
+    public class BreadcrumbItem
+    {
+        public string Title { get; set; }
+        public string Url { get; set; }
+
+        public BreadcrumbItem(string title, string url = null)
+        {
+            Title = title;
+            Url = url;
+        }
+    }
+
+    [Parameter]
+    public List<BreadcrumbItem> DataItems { get; set; } = new();
+}

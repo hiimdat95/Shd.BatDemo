@@ -1,0 +1,54 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "HOPDONG": [
+            {
+              "TP001": "Số hợp đồng đầu tư",
+              "TP002": "Trạng thái TSBĐ",
+              "TRAIPHIEU": [
+                {
+                  "TP003": "Mã trái phiếu",
+                  "TP004": "Ngày mua, đầu tư trái phiếu",
+                  "TP005": "Ngày phát hành",
+                  "TP006": "Ngày đáo hạn",
+                  "TP007": "Lãi suất năm",
+                  "TP008": "Mệnh giá trái phiếu",
+                  "TP009": "Số lượng trái phiếu",
+                  "TP010": "Mã tiền tệ",
+                  "TP011": "Giá gốc/Giá trị thuần của trái phiếu",
+                  "TP012": "Giá trị trái phiếu doanh nghiệp xanh",
+                  "TP013": "Mục đích phát hành trái phiếu",
+                  "TP014": "Mô tả mục đích",
+                  "TP015": "Mục đích sử dụng tiền thu từ phát hành trái phiếu phân theo ngành kinh tế",
+                  "TP016": "Kỳ hạn trái phiếu",
+                  "TP017": "Thời hạn (ngày)",
+                  "TP018": "Kỳ thanh toán trái tức",
+                  "TP019": "Phân loại hiện trạng",
+                  "TP020": "Thông tin chi tiết cầm cố, thế chấp",
+                  "TP021": "Đơn vị bán trái phiếu",
+                  "TP022": "Lãi phải thu hạch toán nội bảng",
+                  "TP023": "Lãi chưa thu hạch toán ngoại bảng",
+                  "TP024": "Nhóm nợ tự phân loại",
+                  "TP025": "Nhóm nợ phân loại sau khi tham chiếu CIC",
+                  "TP026": "Dự phòng cụ thể phải trích nội bảng",
+                  "TP027": "Dự phòng cụ thể đã trích nội bảng",
+                  "TP028": "Dự phòng giảm giá đã trích lập"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

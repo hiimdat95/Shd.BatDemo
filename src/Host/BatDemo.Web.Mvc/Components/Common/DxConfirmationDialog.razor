@@ -1,0 +1,32 @@
+﻿@code {
+    [Parameter] public string DialogTitle { get; set; }
+    [Parameter] public string DialogMessage { get; set; }
+    [Parameter] public EventCallback<bool> OnDialogConfirm { get; set; }
+
+    private bool _isVisible;
+
+    public void Show()
+    {
+        _isVisible = true;
+        StateHasChanged();
+    }
+
+    private async Task Confirm(bool value)
+    {
+        _isVisible = false;
+        await OnDialogConfirm.InvokeAsync(value);
+    }
+}
+
+<DxPopup @bind-Visible="_isVisible" Width="400px" ShowCloseButton="true" ShowFooter="true">
+    <HeaderContentTemplate>
+        <h3>@DialogTitle</h3>
+    </HeaderContentTemplate>
+    <BodyContentTemplate>
+        <p>@DialogMessage</p>
+    </BodyContentTemplate>
+    <FooterContentTemplate Context="Context">
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" Click="() => Confirm(true)">Yes</DxButton>
+        <DxButton RenderStyle="ButtonRenderStyle.Secondary" Click="() => Confirm(false)">No</DxButton>
+    </FooterContentTemplate>
+</DxPopup>

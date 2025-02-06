@@ -1,0 +1,45 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "BCTC": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "BC001": "Số văn bản pháp luật về chế độ kế toán doanh nghiệp mà khách hàng vay áp dụng",
+          "BC002": "Năm tài chính",
+          "BC003": "Ngày kết thúc năm tài chính",
+          "BC004": "Đơn vị tính",
+          "BC005": "Mã tiền tệ",
+          "BC006": "Kiểm toán",
+          "BC007": "Báo cáo tài chính hợp nhất",
+          "BC008": "Loại báo cáo lưu chuyển tiền tệ",
+          "BC009": [
+            {
+              "BC0091": "Mã số chỉ tiêu bảng cân đối kế toán",
+              "BC0092": "Số tiền cuối kỳ",
+              "BC0093": "Số tiền đầu kỳ"
+            }
+          ],
+          "BC010": [
+            {
+              "BC0101": "Mã số chỉ tiêu báo cáo kết quả hoạt động kinh doanh",
+              "BC0102": "Số tiền"
+            }
+          ],
+          "BC011": [
+            {
+              "BC0111": "Mã số chỉ tiêu báo cáo lưu chuyển tiền tệ",
+              "BC0112": "Số tiền"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

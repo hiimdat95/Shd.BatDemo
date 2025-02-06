@@ -1,0 +1,81 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "THONGTINBD": [
+            {
+              "TS001": "Mã bảo đảm cấp tín dụng do TCTD cấp",
+              "TS002": "Mã loại bảo đảm",
+              "TS003": "Ngày hiệu lực",
+              "TS004": "Ngày kết thúc",
+              "TS005": "Tổng giá trị bảo đảm",
+              "TS006": "Giá trị bảo đảm cho các khoản vay của khách hàng",
+              "TS007": "Ngày định giá",
+              "TS008": "Giá trị khấu trừ TSBĐ",
+              "TS013": "Mô tả thông tin bảo đảm",
+              "TS009": [
+                "Số hợp đồng cấp tín dụng"
+              ],
+              "TS010": [
+                "Mã chi nhánh TCTD tại TCTD khác nhận tài sản bảo đảm chung"
+              ],
+              "TS011": [
+                "Mã khách hàng chung tài sản bảo đảm"
+              ],
+              "TS012": [
+                {
+                  "TS0121": "Tên chủ sở hữu tài sản",
+                  "TS0122": "Số CCCD/CMND/Hộ chiếu của chủ sở hữu",
+                  "TS0123": "Mã số thuế/MSDN của chủ sở hữu"
+                }
+              ],
+              "TS014": [
+                {
+                  "TS0141": [
+                    {
+                      "TS01411": "Chủ đầu tư",
+                      "TS01412": "CCCD/CMND/Hộ chiếu của chủ đầu tư",
+                      "TS01413": "Mã số thuế/MSDN của chủ đầu tư",
+                      "TS01414": "Địa chỉ chủ đầu tư"
+                    }
+                  ],
+                  "TS0142": "Tên dự án",
+                  "TS0143": "Vị trí dự án",
+                  "TS0144": "Mã tỉnh, thành phố nơi có dự án.",
+                  "TS0145": "Giấy phép thực hiện",
+                  "TS0146": "Tổng giá trị đầu tư",
+                  "TS0147": "Thời hạn dự án",
+                  "TS0148": "Mô tả dự án"
+                }
+              ],
+              "TS015": [
+                {
+                  "TS0151": "Giấy chứng nhận quyền sử dụng đất và tài sản gắn liền với đất",
+                  "TS0152": "Địa chỉ tài sản",
+                  "TS0153": "Mã tỉnh, thành phố nơi có tài sản",
+                  "TS0154": "Mô tả tài sản là quyền sử dụng đất và tài sản gắn liền với đất"
+                }
+              ],
+              "TS016": [
+                {
+                  "TS0161": "Loại phương tiện",
+                  "TS0162": "Giấy đăng ký",
+                  "TS0163": "Biển kiểm soát"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

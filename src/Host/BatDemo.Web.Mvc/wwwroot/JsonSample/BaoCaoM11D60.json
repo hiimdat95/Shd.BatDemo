@@ -1,0 +1,27 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "XLNO": [
+            {
+              "XLN01": "Mã hình thức xử lý nợ xấu",
+              "XLN02": "Doanh số giảm dư nợ gốc của nợ xấu theo hình thức xử lý nợ xấu",
+              "XLN03": "Nợ gốc bán cho VAMC",
+              "XLN04": "Tên khách hàng mua nợ",
+              "XLN05": "Mã số doanh nghiệp/Mã số thuế/CCCD/CMND/Hộ chiếu của khách hàng mua nợ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

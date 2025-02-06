@@ -1,0 +1,9 @@
+# All files
+[*]
+guidelines = 120
+# Named color format
+guidelines_style = 1px dashed red
+
+# C# or VB files
+#[*.{cs,vb}]
+#guidelines = 80, 120

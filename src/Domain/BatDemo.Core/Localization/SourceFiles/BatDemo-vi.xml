@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="vi">
+	<texts>
+		<text name="HomePage" value="Trang chủ" />
+		<text name="ManagerSystems" value="Quản trị hệ thống" />
+		<text name="ManagerCategory" value="Quản trị danh mục" />
+		<text name="ManagerUsers" value="Quản lý người dùng" />
+		<text name="ManagerRoles" value="Quản lý nhóm quyền" />
+		<text name="ManagerReport" value="Quản lý báo cáo" />
+		<text name="Projects" value="Dự án" />
+		<text name="ProjectTest1s" value="ProjectTest1s kaka" />
+		<text name="About" value="Giới thiệu" />
+		<text name="WelcomeMessage" value="Welcome to BatDemo!" />
+		<text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+		<text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+		<text name="TenantIsNotActive" value="Tenant {0} is not active." />
+		<text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+		<text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
+		<text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+		<text name="PleaseEnterLoginInformation" value="Vui lòng nhập thông tin đăng nhập" />
+		<text name="TenancyName" value="Tenancy name" />
+		<text name="UserNameOrEmail" value="Tài khoản hoặc email" />
+		<text name="Password" value="Mật khẩu" />
+		<text name="OTP" value="OTP" />
+		<text name="ResetPassword" value="Làm mới mật khẩu" />
+		<text name="UpdatePassword" value="Cập nhật mật khẩu" />
+		<text name="RememberMe" value="Ghi nhớ tài khoản" />
+		<text name="LogIn" value="Đăng nhập" />
+		<text name="LoginFailed" value="Đăng nhập thất bại!" />
+		<text name="NameSurname" value="Name surname" />
+		<text name="UserName" value="Tài khoản" />
+		<text name="Name" value="Họ" />
+		<text name="Surname" value="Tên" />
+		<text name="EmailAddress" value="Địa chỉ email" />
+		<text name="Tenants" value="Tenants" />
+		<text name="SavedSuccessfully" value="Lưu thành công" />
+		<text name="CreateNewTenant" value="Create new tenant" />
+		<text name="AdminEmailAddress" value="Email quản trị" />
+		<text name="AdminPassword" value="Mật khẩu quản trị" />
+		<text name="Save" value="Lưu" />
+		<text name="Cancel" value="Hủy bỏ" />
+		<text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+		<text name="DefaultPasswordIs" value="Mật khẩu mặc định là {0}" />
+		<text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
+		<text name="Register" value="Đăng ký" />
+		<text name="OrLoginWith" value="Hoặc đăng nhập cùng" />
+		<text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+		<text name="TenantSelection" value="Tenant Selection" />
+		<text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+		<text name="Logout" value="Đăng xuất" />
+		<text name="RegisterFormUserNameInvalidMessage">Please don't enter an email address for username.</text>
+		<text name="DatabaseConnectionString" value="Database connection string" />
+		<text name="Users" value="Người dùng" />
+		<text name="IsActive" value="Trạng thái" />
+		<text name="FullName" value="Họ và tên" />
+		<text name="CreateNewUser" value="Thêm mới" />
+		<text name="Yes" value="Đồng ý" />
+		<text name="No" value="Không" />
+		<text name="Optional" value="Tùy chọn không bắt buộc" />
+		<text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
+		<text name="CurrentTenant">Current tenant</text>
+		<text name="NotSelected">Not selected</text>
+		<text name="Change">Thay đổi</text>
+		<text name="ChangeTenant">Change tenant</text>
+		<text name="MultiLevelMenu">Demo menu nhiều cấp</text>
+		<text name="Back">Trở về</text>
+		<text name="SuccessfullyRegistered">Đã đăng ký thành công</text>
+		<text name="WaitingForEmailActivation">Địa chỉ email của bạn phải được kích hoạt</text>
+		<text name="Roles">Vai trò</text>
+		<text name="DisplayName">Tên hiển thị</text>
+		<text name="Edit">Sửa</text>
+		<text name="Delete">Xóa</text>
+		<text name="CreateNewRole">Thêm mới</text>
+		<text name="RoleName">Tên vai trò</text>
+		<text name="Actions">Hành động</text>
+		<text name="CouldNotCompleteLoginOperation">Could not complete login operation. Please try again later.</text>
+		<text name="CouldNotValidateExternalUser">Could not validate external user</text>
+		<text name="EditRole">Sửa vai trò</text>
+		<text name="EditTenant">Edit tenant</text>
+		<text name="EditUser">Sửa thông tin người dùng</text>
+		<text name="TenantIdIsNotActive{0}">TenantId {0} is not active</text>
+		<text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
+		<text name="ThisFieldIsRequired">Đây là trường bắt buộc</text>
+		<text name="PleaseWait">Vui lòng đợi...</text>
+		<text name="Administration">Administration</text>
+		<text name="ClearAll">Xóa tất cả</text>
+		<text name="ClearOthers">Clear others</text>
+		<text name="LabelOptions">Label options</text>
+		<text name="Permissions">Danh sách quyền</text>
+		<text name="RoleDescription">Mô tả</text>
+		<text name="Refresh">Làm mới</text>
+		<text name="Create">Thêm mới</text>
+		<text name="UserDetails">Thông tin chi tiết</text>
+		<text name="UserRoles">Vai trò</text>
+		<text name="ConfirmPassword">Xác nhận mật khẩu</text>
+		<text name="Version">Phiên bản</text>
+		<text name="On">Bật</text>
+		<text name="Off">Tắt</text>
+		<text name="AreYouSureWantToDelete">Bạn muốn xóa {0}?</text>
+		<text name="SuccessfullyDeleted">Đã xóa thành công!</text>
+		<text name="StartTyping">Bắt đầu nhập</text>
+		<text name="Skins">Skins</text>
+		<text name="Settings">Cài đặt</text>
+		<text name="Filter">Lọc</text>
+		<text name="CurrentPassword">Mật khẩu hiện tại</text>
+		<text name="NewPassword">Mật khẩu mới</text>
+		<text name="ConfirmNewPassword">Xác nhận mật khẩu</text>
+		<text name="PasswordsDoNotMatch">Mật khẩu chưa khớp</text>
+		<text name="PasswordsMustBeAtLeast8CharactersContainLowercaseUppercaseNumber">Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ thường, chữ hoa và số</text>
+		<text name="UserDeleteWarningMessage">User {0} will be deleted.</text>
+		<text name="RoleDeleteWarningMessage">Role {0} will be deleted and unassigned from all assigned users.</text>
+		<text name="TenantDeleteWarningMessage">Tenant {0} will be deleted.</text>
+		<text name="SearchWithThreeDot">Search...</text>
+		<text name="PleaseEnterAtLeastNCharacter">Vui lòng nhập ít nhất {0} ký tự</text>
+		<text name="PleaseEnterNoMoreThanNCharacter">Vui lòng nhập không quá {0} ký tự</text>
+		<text name="InvalidEmailAddress">Địa chỉ email không hợp lệ</text>
+		<text name="InvalidPattern">Không hợp lệ</text>
+		<text name="PairsDoNotMatch">Không khớp</text>
+		<text name="All">Tất cả</text>
+		<text name="TotalRecordsCount">Tổng: {0}</text>
+		<text name="Search">Tìm kiếm</text>
+		<text name="Clear">Xóa</text>
+		<text name="ResetPasswordStepOneInfo">1. Nhập mật khẩu quản trị viên của bạn</text>
+		<text name="ResetPasswordStepTwoInfo">2. Sao chép mật khẩu ngẫu nhiên này để bạn có thể gửi cho người dùng</text>
+		<text name="UsersActivation">Kích hoạt người dùng</text>
+
+		<text name="Update">Cập nhật</text>
+		<text name="Detail">Chi tiết</text>
+		<text name="ExportXlsx">Xuất file XLSX</text>
+		<text name="ExportXls">Xuất file XLS</text>
+		<text name="ExportCsv">Xuất file CSV</text>
+		<text name="ExportPdf">Xuất file PDF</text>
+		<text name="VirtualScrolling">Bật thanh cuộn cho danh sách</text>
+
+		<text name="CfgBieuMau" value="Biểu mẫu" />
+		<text name="CfgBieuMau_ID" value="ID" />
+		<text name="CfgBieuMau_MA" value="Mã biểu mẫu" />
+		<text name="CfgBieuMau_MOTA" value="Mô tả" />
+		<text name="CfgBieuMau_ThongTuId" value="Mã thông tư" />
+		<text name="CfgBieuMau_KyDuLieuId" value="Mã kỳ dữ liệu" />
+		<text name="CfgBieuMau_TEN" value="Tên biểu mẫu" />
+		<text name="CfgBieuMau_TenBaoCaoGuiCic" value="Tên báo cáo gửi CIC" />
+		<text name="CfgBieuMauChiTieu" value="Biểu mẫu chỉ tiêu" />
+		<text name="CfgBieuMauChiTieu_ID" value="ID" />
+		<text name="CfgBieuMauChiTieu_ChiTieuId" value="Mã chỉ tiêu" />
+		<text name="CfgBieuMauChiTieu_BieuMauId" value="Mã biểu mẫu" />
+		<text name="CfgBieuMauChiTieu_IsDanhSach" value="Danh sách" />
+		<text name="CfgBieuMauChiTieu_IsBatBuoc" value="Bắt buộc" />
+		<text name="CfgBieuMauChiTieu_IsNotUpload" value="Cho phép tải lên" />
+		<text name="CfgBieuMauChiTieu_PATH" value="Đường dẫn" />
+		<text name="CfgBieuMauChiTieu_PathOfId" value="PathOfId" />
+		<text name="CfgBieuMauChiTieu_LEVEL" value="Cấp độ" />
+		<text name="CfgChiTieu" value="Chỉ tiêu" />
+		<text name="CfgChiTieu_ID" value="ID" />
+		<text name="CfgChiTieu_TEN" value="Tên chỉ tiêu" />
+		<text name="CfgChiTieu_TenVietTat" value="Tên viết tắt" />
+		<text name="CfgChiTieu_MOTA" value="Mô tả" />
+		<text name="CfgChiTieu_KieuDuLieuBaoCao" value="Kiểu dữ liệu báo cáo" />
+		<text name="CfgChiTieu_FORMAT" value="Định dạng" />
+		<text name="CfgChiTieu_NhomChiTieuId" value="Nhóm chỉ tiêu" />
+		<text name="CfgChiTieu_MA" value="Mã chỉ tiêu" />
+		<text name="CfgChiTieu_ChiTieuChaId" value="Chỉ tiêu cha" />
+		<text name="CfgChiTieu_DoDaiToiDa" value="Độ dài tối đa" />
+		<text name="CfgChiTieu_KieuDuLieuId" value="Kiểu dữ liệu" />
+		<text name="CfgNhomChiTieu" value="Nhóm chỉ tiêu" />
+		<text name="CfgNhomChiTieu_ID" value="ID" />
+		<text name="CfgNhomChiTieu_TEN" value="Tên nhóm chỉ tiêu" />
+		<text name="CfgNhomChiTieu_MOTA" value="Mô tả" />
+		<text name="CfgNhomChiTieu_ParentId" value="Nhóm chỉ tiêu cha" />
+		<text name="CfgNhomChiTieu_CapNhomChiTieu" value="Cấp nhóm chỉ tiêu" />
+		<text name="CfgNhomChiTieu_SysCode" value="Mã hệ thống" />
+		<text name="CfgThongTu" value="Thông tư" />
+		<text name="CfgThongTu_ID" value="ID" />
+		<text name="CfgThongTu_MA" value="Mã" />
+		<text name="CfgThongTu_TEN" value="Tên" />
+		<text name="CfgThongTu_MOTA" value="Mô tả" />
+		<text name="DmKieuDuLieu" value="Kiểu dữ liệu" />
+		<text name="DmKieuDuLieu_ID" value="ID" />
+		<text name="DmKieuDuLieu_TEN" value="Tên kiểu dữ liệu" />
+		<text name="DmKieuDuLieu_KieuDuLieuSql" value="Kiểu dữ liệu SQL" />
+		<text name="DmKieuDuLieu_KieuDuLieuChuongTrinh" value="Kiểu dữ liệu chương trình" />
+		<text name="DmKyDuLieu" value="Kỳ dữ liệu" />
+		<text name="DmKyDuLieu_ID" value="ID" />
+		<text name="DmKyDuLieu_KyDuLieu" value="Tên kỳ dữ liệu" />
+		<text name="DmKyDuLieu_MOTA" value="Mô tả" />
+		<text name="WfProcess" value="WfProcess" />
+		<text name="WfProcess_ID" value="ID" />
+		<text name="WfProcess_WorkflowId" value="WorkflowId" />
+		<text name="WfProcess_TaskId" value="TaskId" />
+		<text name="WfProcess_TaskName" value="TaskName" />
+		<text name="WfProcess_PreviousTaskId" value="PreviousTaskId" />
+		<text name="WfProcess_PreviousTaskName" value="PreviousTaskName" />
+		<text name="WfProcess_SequenceName" value="SequenceName" />
+		<text name="WfProcess_STATUS" value="STATUS" />
+		<text name="WfProcess_VERSION" value="VERSION" />
+		<text name="WfProcessHistory" value="WfProcessHistory" />
+		<text name="WfProcessHistory_ID" value="ID" />
+		<text name="WfProcessHistory_ProcessId" value="ProcessId" />
+		<text name="WfProcessHistory_UserId" value="UserId" />
+		<text name="WfProcessHistory_FromTaskId" value="FromTaskId" />
+		<text name="WfProcessHistory_FromTaskName" value="FromTaskName" />
+		<text name="WfProcessHistory_ToTaskId" value="ToTaskId" />
+		<text name="WfProcessHistory_ToTaskName" value="ToTaskName" />
+		<text name="WfProcessHistory_TransTime" value="TransTime" />
+		<text name="WfProcessHistory_TransClassifier" value="TransClassifier" />
+		<text name="WfProcessHistory_IsFinalised" value="IsFinalised" />
+		<text name="WfProcessHistory_CommandName" value="CommandName" />
+		<text name="WfProcessHistory_DESCRIPTION" value="DESCRIPTION" />
+		<text name="WfProcessHistory_FromGroupUserId" value="FromGroupUserId" />
+		<text name="WfProcessHistory_ToGroupUsesId" value="ToGroupUsesId" />
+		<text name="WfProcessHistory_FileName" value="FileName" />
+		<text name="WfProcessHistory_FilePath" value="FilePath" />
+		<text name="WfProcessHistory_STATUS" value="STATUS" />
+		<text name="WfProcessHistory_VERSION" value="VERSION" />
+		<text name="WfProcessHistory_FromDepartmentId" value="FromDepartmentId" />
+		<text name="WfProcessHistory_ToDepartmentId" value="ToDepartmentId" />
+		<text name="WfProcessHistory_SequenceName" value="SequenceName" />
+		<text name="WfProcessInstance" value="WfProcessInstance" />
+		<text name="WfProcessInstance_ID" value="ID" />
+		<text name="WfProcessInstance_ProcessId" value="ProcessId" />
+		<text name="WfProcessInstance_FromDepartmentId" value="FromDepartmentId" />
+		<text name="WfProcessInstance_ToDepartmentId" value="ToDepartmentId" />
+		<text name="WfProcessInstance_STATUS" value="STATUS" />
+		<text name="WfProcessInstance_VERSION" value="VERSION" />
+		<text name="WfProcessInstance_FromGroupUserId" value="FromGroupUserId" />
+		<text name="WfProcessInstance_ToGroupUserId" value="ToGroupUserId" />
+		<text name="WfSequenceFlow" value="WfSequenceFlow" />
+		<text name="WfSequenceFlow_ID" value="ID" />
+		<text name="WfSequenceFlow_WorkflowId" value="WorkflowId" />
+		<text name="WfSequenceFlow_CODE" value="Mã" />
+		<text name="WfSequenceFlow_NAME" value="Tên" />
+		<text name="WfSequenceFlow_SourceRefTaskId" value="Từ bước" />
+		<text name="WfSequenceFlow_SourceRefTaskName" value="Từ bước" />
+		<text name="WfSequenceFlow_TargetRefTaskId" value="Chuyển đến bước (Target)" />
+		<text name="WfSequenceFlow_TargetRefTaskName" value="Chuyển đến bước (Target)" />
+		<text name="WfSequenceFlow_CLASSIFIER" value="CLASSIFIER" />
+		<text name="WfSequenceFlow_CommandName" value="CommandName" />
+		<text name="WfSequenceFlow_STATUS" value="Trạng thái được cập nhật" />
+		<text name="WfSequenceFlow_VERSION" value="VERSION" />
+		<text name="WfTask" value="WfTask" />
+		<text name="WfTask_ID" value="ID" />
+		<text name="WfTask_WorkflowId" value="Quy trình" />
+		<text name="WfTask_CODE" value="Mã" />
+		<text name="WfTask_NAME" value="Tên" />
+		<text name="WfTask_IsInitial" value="Bắt đầu" />
+		<text name="WfTask_IsFinal" value="Kết thúc" />
+		<text name="WfTask_DESCRIPTION" value="Mô tả" />
+		<text name="WfTask_RectX" value="RectX" />
+		<text name="WfTask_RectY" value="RectY" />
+		<text name="WfTask_RectWidth" value="RectWidth" />
+		<text name="WfTask_RectHeight" value="RectHeight" />
+		<text name="WfTask_STATUS" value="Trạng thái" />
+		<text name="WfTask_VERSION" value="VERSION" />
+		<text name="WfTask_STT" value="STT" />
+		<text name="WfTaskDepartment" value="WfTaskDepartment" />
+		<text name="WfTaskDepartment_ID" value="ID" />
+		<text name="WfTaskDepartment_TaskId" value="TaskId" />
+		<text name="WfTaskDepartment_DepartmentId" value="DepartmentId" />
+		<text name="WfTaskDepartment_STATUS" value="STATUS" />
+		<text name="WfTaskDepartment_VERSION" value="VERSION" />
+		<text name="WfTaskRole" value="WfTaskRole" />
+		<text name="WfTaskRole_ID" value="ID" />
+		<text name="WfTaskRole_TaskId" value="TaskId" />
+		<text name="WfTaskRole_RoleId" value="RoleId" />
+		<text name="WfTaskRole_STATUS" value="STATUS" />
+		<text name="WfTaskRole_VERSION" value="VERSION" />
+		<text name="WfWorkflow" value="Quản lý quy trình" />
+		<text name="WfWorkflow_ID" value="ID" />
+		<text name="WfWorkflow_CODE" value="Mã quy trình" />
+		<text name="WfWorkflow_NAME" value="Tên quy trình" />
+		<text name="WfWorkflow_TYPE" value="TYPE" />
+		<text name="WfWorkflow_SVG" value="SVG" />
+		<text name="WfWorkflow_STATUS" value="Trạng thái" />
+		<text name="WfWorkflow_VERSION" value="VERSION" />
+		<text name="WfWorkflow_XML" value="XML" />
+		<text name="WfWorkflow_CreationTime" value="Ngày tạo" />
+		<text name="LichSuImport" value="Thu thập dữ liệu thủ công" />
+		<text name="LichSuImport_ID" value="ID" />
+		<text name="LichSuImport_TempId" value="Báo cáo" />
+		<text name="LichSuImport_FilePath" value="FilePath" />
+		<text name="LichSuImport_BatchId" value="BatchId" />
+		<text name="LichSuImport_NgayTao" value="Ngày tạo" />
+		<text name="LichSuImport_NguoidungId" value="Người tạo" />
+		<text name="LichSuImport_DonviId" value="Đơn vị" />
+		<text name="LichSuImport_HanhDong" value="Hành động" />
+		<text name="LichSuImport_NoiDung" value="Nội dung" />
+		
+		<text name="DuLieuTho" value="Dữ liệu thô" />
+		<text name="KhaiThacDuLieuTho" value="Khai thác dữ liệu thô" />
+		<text name="COLUMN_CHOOSER" value="Chọn cột hiển thị" />
+		<text name="CfgTableKhaiThacDuLieu" value="Cấu hình bảng khai thác dữ liệu thô" />
+		<text name="CfgTableKhaiThacDuLieu_ID" value="Id" />
+		<text name="CfgTableKhaiThacDuLieu_TEN" value="Tên" />
+		<text name="CfgTableKhaiThacDuLieu_TenInDatabase" value="Tên bảng trong CSDL" />
+		<text name="CfgTableKhaiThacDuLieu_IsActive" value="Hoạt động" />
+		<text name="CfgTableKhaiThacDuLieu_ConnectionStringId" value="Chuỗi kết nối CSDL" />
+		<text name="CfgConnectionString" value="Cấu hình CSDL" />
+		<text name="CfgConnectionString_ID" value="Id" />
+		<text name="CfgConnectionString_TEN" value="Tên" />
+		<text name="CfgConnectionString_HOST" value="Host" />
+		<text name="CfgConnectionString_ServiceName" value="ServiceName" />
+		<text name="CfgConnectionString_PORT" value="Port" />
+		<text name="CfgConnectionString_USERNAME" value="Tài khoản" />
+		<text name="CfgConnectionString_PASSWORD" value="Mật khẩu" />
+
+		<text name="CfgTableRawDataBieuMau" value="Cấu hình bảng khai thác dữ liệu thô - biểu mẫu" />
+		<text name="CfgTableRawDataBieuMau_ID" value="Id" />
+		<text name="CfgTableRawDataBieuMau_ColumnReference" value="Cột reference" />
+		<text name="CfgTableRawDataBieuMau_BieuMauId" value="Biểu mẫu" />
+		<text name="CfgTableRawDataBieuMau_CfgTableRawDataId" value="Bảng dữ liệu thô" />
+		<text name="CfgTableRawDataBieuMau_ColumnLoadDate" value="Load date column" />
+		<text name="CfgTableRawDataBieuMau_ColumnSelected" value="Trường lấy dữ liệu" />
+		
+		<text name="CfgThamSoHeThong" value="Tham số hệ thống" />
+		<text name="CfgThamSoHeThong_ID" value="ID" />
+		<text name="CfgThamSoHeThong_MA" value="Mã" />
+		<text name="CfgThamSoHeThong_TEN" value="Tên" />
+		<text name="CfgThamSoHeThong_GiaTri" value="Giá trị" />
+		<text name="CfgThamSoHeThong_IsActive" value="Trạng thái" />
+		<text name="CfgThamSoHeThong_DataType" value="Kiểu dữ liệu" />
+		<text name="CfgThamSoHeThong_CreationTime" value="Ngày tạo" />
+		<text name="CfgThamSoKiemTraBaoCao" value="Tham số kiểm tra báo cáo" />
+		<text name="CfgThamSoKiemTraBaoCao_ID" value="ID" />
+		<text name="CfgThamSoKiemTraBaoCao_BieuThucCanSoSanh" value="Biểu thức cần so sánh" />
+		<text name="CfgThamSoKiemTraBaoCao_BieuThucSoSanh" value="Biểu thức so sánh" />
+		<text name="CfgThamSoKiemTraBaoCao_ToanTu" value="Toán tử" />
+		<text name="CfgThamSoKiemTraBaoCao_ChenhLechChoPhep" value="Chênh lệch cho phép" />
+		<text name="CfgThamSoKiemTraBaoCao_GhiChu" value="Ghi chú" />
+		<text name="CfgThamSoKiemTraBaoCao_BieuMauId" value="Biểu mẫu" />
+		<text name="CfgThamSoKiemTraBaoCao_CreationTime" value="Ngày tạo" />
+		<text name="BaoCaoPhanQuyen" value="Phân quyền khai thác cho đơn vị" />
+		<text name="BaoCaoPhanQuyen_ID" value="ID" />
+		<text name="BaoCaoPhanQuyen_DonViId" value="Đơn vị" />
+		<text name="BaoCaoPhanQuyen_BaoCaoId" value="Báo cáo" />
+		<text name="BaoCaoPhanQuyen_PermissionType" value="PermissionType" />
+		<text name="Abporganizationunit" value="Quản lý đơn vị" />
+		<text name="Abporganizationunit_TenantId" value="TenantId" />
+		<text name="Abporganizationunit_ParentId" value="Đơn vị cha" />
+		<text name="Abporganizationunit_Code" value="Mã" />
+		<text name="Abporganizationunit_DisplayName" value="Tên đơn vị" />
+		<text name="Abporganizationunit_CreationTime" value="Ngày tạo" />
+		<text name="Abporganizationunit_ISDELETED" value="ISDELETED" />
+
+		<text name="CongThucDong" value="Công thức động" />
+		<text name="CfgStoreProcCongThucDongCungKy" value="Procedure check dữ liệu cùng kỳ" />
+		<text name="CfgStoreProcCongThucDongCungKy_ID" value="Id" />
+		<text name="CfgStoreProcCongThucDongCungKy_TenProcedure" value="Tên procedure" />
+		<text name="CfgStoreProcCongThucDongCungKy_MoTa" value="Mô tả" />
+		<text name="CfgStoreProcCongThucDongCungKy_SCHEDULE" value="Schedule" />
+		<text name="CfgStoreProcCongThucDongCungKy_BieuMauId" value="Biểu mẫu" />
+		<text name="CfgStoreProcCongThucDongCungKy_KyDuLieuId" value="Kỳ dữ liệu" />
+		<text name="CfgStoreProcCongThucDongCungKy_CreationTime" value="Ngày tạo" />
+		<text name="CfgStoreProcCongThucDongKhacKy" value="Procedure check dữ liệu khác kỳ" />
+		<text name="CfgStoreProcCongThucDongKhacKy_ID" value="Id" />
+		<text name="CfgStoreProcCongThucDongKhacKy_TenProcedure" value="Tên procedure" />
+		<text name="CfgStoreProcCongThucDongKhacKy_MoTa" value="Mô tả" />
+		<text name="CfgStoreProcCongThucDongKhacKy_SCHEDULE" value="Schedule" />
+		<text name="CfgStoreProcCongThucDongKhacKy_BieuMauId" value="Biểu mẫu" />
+		<text name="CfgStoreProcCongThucDongKhacKy_CreationTime" value="Ngày tạo" />
+		<text name="CfgStoreProcCongThucDongKyDuLieu" value="CfgStoreProcCongThucDongKyDuLieu" />
+		<text name="CfgStoreProcCongThucDongKyDuLieu_ID" value="ID" />
+		<text name="CfgStoreProcCongThucDongKyDuLieu_CfgStoreProcCongThucDongKhacKyId" value="CfgStoreProcCongThucDongKhacKyId" />
+		<text name="CfgStoreProcCongThucDongKyDuLieu_KyDuLieuId" value="KyDuLieuId" />
+		<text name="CfgStoreProcCongThucDongKyDuLieu_CreationTime" value="CreationTime" />
+		<text name="DmTemplateBaoCao" value="Mẫu template thu thập dữ liệu" />
+		<text name="DmTemplateBaoCao_ID" value="Id" />
+		<text name="DmTemplateBaoCao_MA" value="Mã" />
+		<text name="DmTemplateBaoCao_TEN" value="Tên" />
+		<text name="DmTemplateBaoCao_TEMPPATH" value="Template hiện tại" />
+		<text name="DmTemplateBaoCao_CreationTime" value="CreationTime" />
+		<text name="DmTemplateBaoCao_TenBang" value="Tên Bảng" />
+		<text name="DmTemplateBaoCao_BatchGuid" value="BatchGuid" />
+		<text name="DmTemplateBaoCao_TepDinhKemId" value="TepDinhKemId" />
+		<text name="Download" value="Tải xuống" />
+		<text name="BaoCaoLab" value="BaoCaoLab" />
+		<text name="BaoCaoLab_ID" value="ID" />
+		<text name="BaoCaoLab_NAME" value="NAME" />
+		<text name="BaoCaoLab_CODE" value="CODE" />
+		<text name="DmLuongImport" value="Luồng import" />
+		<text name="DmLuongImport_ID" value="ID" />
+		<text name="DmLuongImport_MA" value="MA" />
+		<text name="DmLuongImport_TEN" value="TEN" />
+		<text name="DmLuongImport_CreationTime" value="CreationTime" />
+		<text name="LichSuImport_KyDuLieu" value="Kỳ dữ liệu" />
+		<text name="BaoCaoCic" value="Báo cáo CIC" />
+		<text name="BaoCaoCic_ID" value="ID" />
+		<text name="BaoCaoCic_NAME" value="Tên báo cáo" />
+		<text name="BaoCaoCic_CODE" value="Mã báo cáo" />
+		<text name="BaoCaoCic_KyDuLieuId" value="Kỳ báo cáo" />
+		<text name="BaoCaoCic_STATUS" value="STATUS" />
+		<text name="BaoCaoCic_VERSION" value="VERSION" />
+		<text name="BaoCaoCic_LastModificationTime" value="Ngày update" />
+		<text name="BaoCaoCicLichSu" value="Lịch sử báo cáo CIC" />
+		<text name="BaoCaoCicLichSu_ID" value="ID" />
+		<text name="BaoCaoCicLichSu_BaoCaoVersionId" value="Vesion Báo cáo" />
+		<text name="BaoCaoCicLichSu_DonViId" value="Đơn vị" />
+		<text name="BaoCaoCicLichSu_LoaiThayDoi" value="Loại thay đổi" />
+		<text name="BaoCaoCicLichSu_NoiDungTruoc" value="Nội dung trước" />
+		<text name="BaoCaoCicLichSu_NoiDungSau" value="Nội sau khi thay đổi" />
+		<text name="BaoCaoCicLichSu_VESION" value="VESION" />
+		<text name="BaoCaoCicVersion" value="Version báo cáo CIC" />
+		<text name="BaoCaoCicVersion_ID" value="ID" />
+		<text name="BaoCaoCicVersion_NAME" value="Tên báo cáo" />
+		<text name="BaoCaoCicVersion_CODE" value="Mã báo cáo" />
+		<text name="BaoCaoCicVersion_BaoCaoId" value="BaoCaoId" />
+		<text name="BaoCaoCicVersion_STATUS" value="STATUS" />
+		<text name="BaoCaoCicVersion_VERSION" value="VERSION" />
+	</texts>
+</localizationDictionary>
+
+
+
+
+
+
+
+

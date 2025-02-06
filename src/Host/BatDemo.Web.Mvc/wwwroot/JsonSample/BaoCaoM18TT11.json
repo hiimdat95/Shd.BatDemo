@@ -1,0 +1,34 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "KHACHHANG": [
+    {
+      "TTC03": "Mã khách hàng do TCTD cấp",
+      "CHOVAY": [
+        {
+          "PL001": "Mã thời hạn cấp tín dụng",
+          "PL002": "Hình thức cấp tín dụng",
+          "PL004": "Mã tiền tệ",
+          "PL005": "Số dư nợ theo nguyên tệ",
+          "PL006": "Nhóm nợ tự phân loại",
+          "PL007": [
+            "Lý do phân loại nợ"
+          ]
+        }
+      ],
+      "CAMKETNGB": [
+        {
+          "PL003": "Mã loại nghiệp vụ",
+          "PL004": "Mã tiền tệ",
+          "PL005": "Số dư nợ theo nguyên tệ",
+          "PL006": "Nhóm nợ tự phân loại",
+          "PL007": [
+            "Lý do phân loại nợ"
+          ]
+        }
+      ]
+    }
+  ]
+}

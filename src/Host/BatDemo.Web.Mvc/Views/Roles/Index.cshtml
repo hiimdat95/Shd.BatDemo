@@ -1,0 +1,85 @@
+﻿@using BatDemo.Web.Components.Common
+@using BatDemo.Web.Startup
+@using static BatDemo.Web.Components.Common.BreadcrumbComponent
+@model BatDemo.Web.Models.Roles.RoleListViewModel
+@{
+    ViewBag.Title = L("Roles");
+    ViewBag.CurrentPageName = PageNames.Roles;
+    List<BreadcrumbItem> Breadcrumb = new List<BreadcrumbItem> {
+        new BreadcrumbItem(L("Roles"))
+    };
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Roles/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Roles/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid tw-flex tw-items-center tw-justify-between">
+        <component type="typeof(BreadcrumbComponent)" render-mode="Server" param-DataItems="Breadcrumb" />
+        <div>
+            <a href="javascript:;" data-toggle="modal" data-target="#RoleCreateModal" class="btn bg-blue btn-sm float-sm-right">
+                <i class="fa fa-plus"></i>
+                @L("Create")
+            </a>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <!--Use for bulk actions-->
+                            </div>
+                            <div class="col-md-4">
+                                @await Html.PartialAsync("~/Views/Roles/Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="RolesTable" class="table-striped table-bordered table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>@L("RoleName")</th>
+                                        <th>@L("DisplayName")</th>
+                                        <th style="width: 150px">@L("Actions")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("~/Views/Roles/_CreateModal.cshtml", Model)
+
+<div class="modal fade" id="RoleEditModal" tabindex="-1" role="dialog" aria-labelledby="RoleEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

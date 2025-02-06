@@ -1,0 +1,25 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "KHV": [
+    {
+      "TTC03": "Mã khách hàng do TCTD cấp",
+      "TTC04": "Tên khách hàng",
+      "LQ001": "Tổng mức dư nợ cấp tín dụng đối với khách hàng"
+      "LQ002": [
+        {
+          "LQ0021": [
+            "Mã phân loại người có liên quan"
+          ],
+          "LQ0022": "Mã khách hàng của người liên quan",
+          "LQ0023": "Tên người có liên quan",
+          "LQ0024": "Số CCCD/CMND/Hộ chiếu của người có liên quan",
+          "LQ0025": "Mã số doanh nghiệp của người có liên quan",
+          "LQ0026": "Tổng mức dư nợ cấp tín dụng đối với người có liên quan"
+        }
+      ]
+    }
+  ]
+}

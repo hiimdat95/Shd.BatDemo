@@ -1,0 +1,54 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "HOPDONG": [
+            {
+              "HDT01": "Số hợp đồng",
+              "HDT02": "Hạn mức tín dụng",
+              "HDT03": "Loại hạn mức thẻ",
+              "HDT04": "Trạng thái TSBĐ",
+              "CTTHE": [
+                {
+                  "TH001": "Mã thẻ",
+                  "TH002": "Loại thẻ",
+                  "TH003": "Phát hành thẻ bằng phương thức điện tử",
+                  "TH004": "Ngày mở thẻ",
+                  "TH005": "Ngày hết hạn",
+                  "TH006": "Ngày đóng thẻ",
+                  "TH007": "Ngày sao kê",
+                  "TH008": "Dư nợ thẻ đến ngày báo cáo",
+                  "TH009": "Số tiền phải thanh toán trên sao kê",
+                  "TH010": "Số tiền phải thanh toán tối thiểu",
+                  "TH011": "Số tiền đã thanh toán",
+                  "TH012": "Số tiền quá hạn",
+                  "TH013": "Số ngày quá hạn",
+                  "TH014": "Số kỳ quá hạn",
+                  "TH015": "Nhóm nợ tự phân loại",
+                  "TH016": "Nhóm nợ phân loại sau khi tham chiếu CIC",
+                  "TH017": "Dự phòng cụ thể phải trích nội bảng",
+                  "TH018": "Dự phòng cụ thể đã trích nội bảng",
+                  "TH019": [
+                    {
+                      "TH0191": "Họ và tên của cá nhân được tổ chức ủy quyền sử dụng thẻ",
+                      "TH0192": "Số CCCD/CMND/Hộ chiếu của cá nhân được tổ chức ủy quyền sử dụng thẻ"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

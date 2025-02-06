@@ -1,0 +1,90 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "CNTCTD": [
+    {
+      "TTC01": "Mã chi nhánh TCTD",
+      "TTC02": "Tên chi nhánh TCTD",
+      "KHACHHANG": [
+        {
+          "TTC03": "Mã khách hàng do TCTD cấp",
+          "TTC04": "Tên khách hàng",
+          "CHOVAY": [
+            {
+              "HD001": "Số hợp đồng tín dụng",
+              "HD002": "Ngày hiệu lực hợp đồng",
+              "HD003": "Ngày kết thúc hợp đồng",
+              "KHEUOC": [
+                {
+                  "KU001": "Số khế ước",
+                  "KU005": "Mã thời hạn cấp tín dụng",
+                  "KU006": "Hình thức cấp tín dụng",
+                  "KU009": "Mã tiền tệ",
+                  "KU010": "Số dư nợ theo nguyên tệ",
+                  "KU011": "Lãi suất",
+                  "KU012": "Nhóm nợ tự phân loại",
+                  "KU013": "Nhóm nợ phân loại sau khi tham chiếu CIC",
+                  "KU021": "Mục đích sử dụng tiền vay phân theo ngành kinh tế",
+                  "KU022": [
+                    "Mục đích sử dụng tiền vay đối với lĩnh vực"
+                  ]
+                }
+              ]
+            }
+          ],
+          "CAMKETNGB": [
+            {
+              "CK001": "Số hợp đồng",
+              "CK002": "Ngày hiệu lực hợp đồng",
+              "CK003": "Ngày kết thúc hợp đồng",
+              "CTCKNGB": [
+                {
+                  "CT001": "Số cam kết ngoại bảng",
+                  "CT006": "Mã loại nghiệp vụ",
+                  "CT007": "Mã tiền tệ",
+                  "CT008": "Số dư cam kết",
+                  "CT010": "Nhóm nợ tự phân loại",
+                  "CT011": "Nhóm nợ phân loại sau khi tham chiếu CIC"
+                }
+              ]
+            }
+          ],
+          "NOXLRR": [
+            {
+              "NGB01": "Số hợp đồng tín dụng",
+              "DUNO": [
+                {
+                  "NGB03": "Mã tiền tệ",
+                  "NGB04": "Số dư nợ gốc đã xử lý bằng quỹ dự phòng rủi ro đưa ra theo dõi ngoại bảng theo nguyên tệ"
+                }
+              ]
+            }
+          ],
+          "NHANUT": [
+            {
+              "NHD01": "Số hợp đồng tín dụng",
+              "NHD05": "Ngày hiệu lực hợp đồng",
+              "NHD06": "Ngày kết thúc hợp đồng",
+              "KHEUOC": [
+                {
+                  "NKU01": "Số khế ước",
+                  "NKU04": "Mã thời hạn cấp tín dụng",
+                  "NKU05": "Hình thức cấp tín dụng",
+                  "NKU07": "Mã tiền tệ",
+                  "NKU08": "Số dư nợ theo nguyên tệ",
+                  "NKU09": "Lãi suất",
+                  "NKU14": "Mục đích sử dụng tiền vay phân theo ngành kinh tế",
+                  "NKU15": [
+                    "Mục đích sử dụng tiền vay đối với lĩnh vực: đầu tư kinh doanh bất động sản, phục vụ đời sống, tiêu dùng, đầu tư kinh doanh chứng khoán"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

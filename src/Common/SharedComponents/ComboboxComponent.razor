@@ -1,0 +1,26 @@
+﻿@using System.ComponentModel.DataAnnotations;
+
+
+<DxComboBox Data="EducationDegrees"
+            TextFieldName="@nameof(EducationDegree.DisplayName)"
+            ValueFieldName="@nameof(EducationDegree.Value)"
+            @bind-Value="Value"
+            AllowUserInput="true"></DxComboBox>
+
+@code {
+    public List<EducationDegree> EducationDegrees { get; set; } = new List<EducationDegree>();
+    int Value { get; set; } = 0;
+
+    protected override void OnInitialized() {
+        //...
+        EducationDegrees = Enum.GetValues(typeof(EducationType))
+            .OfType<EducationType>()
+            .Select(t => new EducationDegree()
+            {
+                Value = t,
+                DisplayName = t.GetAttribute<DisplayAttribute>().Name
+            }).ToList();
+        base.OnInitialized();
+    }
+
+}

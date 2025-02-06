@@ -1,0 +1,15 @@
+{
+  "KB001": "Ngày báo cáo",
+  "KB002": "Họ và tên người báo cáo",
+  "KB003": "Số điện thoại người báo cáo",
+  "KB004": "Email người báo cáo",
+  "KHACHHANG": [
+    {
+      "TTC03": "Mã khách hàng do TCTD cấp",
+      "TTC04": "Tên khách hàng",
+      "TC011": "Mã số doanh nghiệp",
+      "TC013": "Số quyết định thành lập",
+      "TC015": "Số Giấy phép đầu tư"
+    }
+  ]
+}

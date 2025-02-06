@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i Styles/main.scss -o wwwroot/css/main.css",
+    "watch:css": "tailwindcss -i Styles/main.scss -o wwwroot/css/main.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "postcss-import": "^16.1.0",
+    "sass": "^1.77.6",
+    "tailwindcss": "^3.4.13"
+  }
+}
