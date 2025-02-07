@@ -140,15 +140,15 @@
         var result = await service.CreateAsync(Model);
         if(result.Success){
             await JS.InvokeVoidAsync($"toastr.success", $"Create a Transaction successfully!");
+            NavManager.NavigateTo($"/transaction");
+            NavManager.Refresh();
         }
         else{
-            await JS.InvokeVoidAsync($"toastr.error", $"Create a Transaction failed!");
+            await JS.InvokeVoidAsync($"toastr.error", result.Message);
         }
         
         // Loading = false;
 
-        NavManager.NavigateTo($"/transaction");
-        NavManager.Refresh();
     }
 
     async Task HandleInvalidSubmit()

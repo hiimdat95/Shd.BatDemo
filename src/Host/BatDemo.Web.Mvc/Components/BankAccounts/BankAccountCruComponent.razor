@@ -125,15 +125,16 @@
 		bool isValid = Form.EditContext.Validate();
 		if (isValid)
 		{
-			var resultValidate = await service.ValidateExitedAccountNumberAsync(Model.AccountNumber);
-			if (!resultValidate.Success)
-			{
-				await JS.InvokeVoidAsync($"toastr.error", resultValidate.Message);
-			}
-			else
-			{
-				await HandleValidSubmit();
-			}
+			// var resultValidate = await service.ValidateExitedAccountNumberAsync(Model.AccountNumber);
+			// if (!resultValidate.Success)
+			// {
+			// 	await JS.InvokeVoidAsync($"toastr.error", resultValidate.Message);
+			// }
+			// else
+			// {
+			// 	await HandleValidSubmit();
+			// }
+			await HandleValidSubmit();
 		}
 		else await HandleInvalidSubmit();
 	}
@@ -158,14 +159,15 @@
 		if (result.Success)
 		{
 			await JS.InvokeVoidAsync($"toastr.success", $"Create a BankAccount successfully!");
+			NavManager.NavigateTo($"/bank-account");
+			NavManager.Refresh();
 		}
 		else
 		{
 			await JS.InvokeVoidAsync($"toastr.error", result.Message);
 		}
 
-		NavManager.NavigateTo($"/bank-account");
-		NavManager.Refresh();
+		
 	}
 
 	async Task HandleInvalidSubmit()

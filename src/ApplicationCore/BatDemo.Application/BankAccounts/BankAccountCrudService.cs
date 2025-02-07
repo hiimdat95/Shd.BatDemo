@@ -105,7 +105,7 @@ namespace BatDemo.BankAccounts
         {
             try
             {
-                var lstBankAccount = await _readRepository.GetAllListAsync(x=>x.AccountNumber == accountNumber && !x.IsDeleted);
+                var lstBankAccount = await _readRepository.GetAllListAsync(x => x.AccountNumber == accountNumber && !x.IsDeleted);
                 if (lstBankAccount.Any())
                 {
                     return BadRequest("400", "Accout number has been exited. Please input other account number");
@@ -133,16 +133,20 @@ namespace BatDemo.BankAccounts
                 {
                     return NotFoundWithResult<BankAccountCrudDto>("404", "Not found");
                 }
-                var resultValidate = await ValidateExitedAccountNumberAsync(model.AccountNumber);
-                if (!resultValidate.Success)
+                if (!model.AccountNumber.Equals(entity.AccountNumber))
                 {
-                    return BadRequestWithResult<BankAccountCrudDto>("400", resultValidate.Message);
+                    var resultValidate = await ValidateExitedAccountNumberAsync(model.AccountNumber);
+                    if (!resultValidate.Success)
+                    {
+                        return BadRequestWithResult<BankAccountCrudDto>("400", resultValidate.Message);
+                    }
                 }
+
                 ObjectMapper.Map(model, entity);
                 using (var unitOfWork = UnitOfWorkManager.Begin())
                 {
                     var id = await _writeRepository.InsertOrUpdateAndGetIdAsync(entity);
-                    model.Id = id;  
+                    model.Id = id;
                     await UnitOfWorkManager.Current.SaveChangesAsync();
                     await unitOfWork.CompleteAsync();
                     return OkWithResult<BankAccountCrudDto>(model);
