@@ -7,13 +7,14 @@ using BatDemo.Repositories.Gen.Write;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace BatDemo.BankAccounts
 {
     /// <summary>
     /// 
     /// </summary>
-    public class BankAccountCrudService : ApplicationService, IBankAccountCrudService
+    public class BankAccountCrudService : BatDemoAppServiceBase, IBankAccountCrudService
     {
         private readonly IBankAccountWriteRepository _writeRepository;
         private readonly IBankAccountReadRepository _readRepository;
@@ -29,7 +30,7 @@ namespace BatDemo.BankAccounts
             _readRepository = readRepository;
             _writeRepository = writeRepository;
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +40,7 @@ namespace BatDemo.BankAccounts
         {
             return _readRepository.GetAllQueryableAsync();
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -51,7 +52,7 @@ namespace BatDemo.BankAccounts
             try
             {
                 var entity = await _readRepository.GetAsync(id);
-                if(entity != null)
+                if (entity != null)
                 {
                     return ObjectMapper.Map<BankAccountCrudDto>(entity);
                 }
@@ -66,25 +67,27 @@ namespace BatDemo.BankAccounts
                 return null;
             }
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [UnitOfWork(isTransactional: false)]
-        public async Task<Guid?> CreateAsync(BankAccountCrudDto model)
+        public async Task<ServiceResponse<BankAccountCrudDto>> CreateAsync(BankAccountCrudDto model)
         {
             try
             {
                 var entity = ObjectMapper.Map<BankAccount>(model);
                 var id = await _writeRepository.InsertAndGetIdAsync(entity);
-                return id;
+                model.Id = id;
+
+                return OkWithResult<BankAccountCrudDto>(model);
             }
             catch (Exception ex)
             {
                 Logger.Error(ex.Message.ToString(), ex);
-                return null;
+                return ServerErrorWithResult<BankAccountCrudDto>("500", ex.Message.ToString());
             }
         }
 
@@ -94,28 +97,29 @@ namespace BatDemo.BankAccounts
         /// <param name="model"></param>
         /// <returns></returns>
         [UnitOfWork(isTransactional: false)]
-        public async Task<Guid?> UpdateAsync(BankAccountCrudDto model)
+        public async Task<ServiceResponse<BankAccountCrudDto>> UpdateAsync(BankAccountCrudDto model)
         {
             try
             {
                 var entity = await _readRepository.GetAsync(model.Id.Value);
-                if(entity == null)
+                if (entity == null)
                 {
-                    return null;
+                    return NotFoundWithResult<BankAccountCrudDto>("404", "Not found");
                 }
                 ObjectMapper.Map(model, entity);
                 using (var unitOfWork = UnitOfWorkManager.Begin())
                 {
-                    await _writeRepository.InsertOrUpdateAndGetIdAsync(entity);
+                    var id = await _writeRepository.InsertOrUpdateAndGetIdAsync(entity);
+                    model.Id = id;  
                     await UnitOfWorkManager.Current.SaveChangesAsync();
                     await unitOfWork.CompleteAsync();
-                    return entity.Id;
+                    return OkWithResult<BankAccountCrudDto>(model);
                 }
             }
             catch (Exception ex)
             {
                 Logger.Error(ex.Message.ToString(), ex);
-                return null;
+                return ServerErrorWithResult<BankAccountCrudDto>("500", ex.Message.ToString());
             }
         }
     }

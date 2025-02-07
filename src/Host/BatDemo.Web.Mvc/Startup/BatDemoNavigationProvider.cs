@@ -61,6 +61,14 @@ namespace BatDemo.Web.Startup
                             icon: "fas fa-theater-masks"
                         )
                     )
+                .AddItem(
+                        new MenuItemDefinition(
+                            PageNames.Transactions,
+                            L("Transaction"),
+                            url: "transaction",
+                            icon: "fas fa-theater-masks"
+                        )
+                    )
                 /*.AddItem( // Menu items below is just for demonstration!
                     new MenuItemDefinition(
                         "MultiLevelMenu",

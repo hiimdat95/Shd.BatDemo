@@ -30,12 +30,12 @@ namespace BatDemo.BankAccounts
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<Guid?> CreateAsync(BankAccountCrudDto model);
+        Task<ServiceResponse<BankAccountCrudDto>> CreateAsync(BankAccountCrudDto model);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<Guid?> UpdateAsync(BankAccountCrudDto model);
+        Task<ServiceResponse<BankAccountCrudDto>> UpdateAsync(BankAccountCrudDto model);
     }
 }

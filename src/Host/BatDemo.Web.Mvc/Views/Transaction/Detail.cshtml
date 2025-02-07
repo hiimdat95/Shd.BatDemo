@@ -1,0 +1,10 @@
+﻿@using BatDemo.Transactions.Dto
+@using BatDemo.Web.Components.Transactions
+@using BatDemo.Web.Startup
+@model TransactionDto
+@{
+    ViewBag.CurrentPageName = PageNames.Transactions;
+    ViewBag.Title = L("Transaction");
+    var isView = ViewBag.IsView;
+}
+<component type="typeof(TransactionCruComponent)" render-mode="Server" param-Detail="Model" param-View="isView" />

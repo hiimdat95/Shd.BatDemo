@@ -1,0 +1,96 @@
+﻿@using BatDemo.BankAccounts
+@using BatDemo.EntityFrameworkCore.Repositories.Gen.Read
+@using BatDemo.Localization
+@using BatDemo.Transactions.Dto
+@using Newtonsoft.Json
+@using BatDemo.Repositories.Gen.Read
+@using BatDemo.Validation
+
+@if (IsView)
+{
+	<div class="DetailField">
+		<span class="col-md-3 col-form-label">@LC.L("BankAccount_AccountNumber") :</span>
+		<span class="col-md-9 tw-flex tw-items-center">@GetSelectedItemDescription()</span>
+	</div>
+
+}
+else
+{
+	<DxComboBox Data="@Data"
+				TextFieldName="@nameof(BatDemo.Entities.BankAccount.AccountNumber)"
+				ValueFieldName="Id"
+				Value="@_currentSelected"
+				ValueChanged="@((BatDemo.Entities.BankAccount itemSelected) => SelectedBankAccountChanged(itemSelected))"
+				ValueExpression="@(() => _currentSelected)"
+				CssClass="cw-480"
+				InputId="Transaction_ToAccount_ID" />
+	<p class="demo-text cw-480 mt-3" style="display:none">
+		<b>Selected item: </b>
+	<p>@GetSelectedItemDescription()</p>
+		</p>
+}
+
+@code {
+	[CascadingParameter]
+	public TransactionDto Model { get; set; }
+
+	private BatDemo.Entities.BankAccount _currentSelected { get; set; }
+
+	[Parameter]
+	public EventCallback<Guid> OnValueChanged { get; set; }
+
+	[Parameter]
+	public bool IsCreate { get; set; }
+
+	[Parameter]
+	public bool IsView { get; set; }
+	[Inject]
+	private IBankAccountCrudService bankAccountCruService { get; set; }
+
+	IEnumerable<BatDemo.Entities.BankAccount> Data { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+		//Data = (await _iBankAccountService.GetAllQueryableAsync()).ToList();
+		//Value = Data.FirstOrDefault();
+
+		var objectDataQueryable = await bankAccountCruService.GetAllQueryableAsync();
+		Data = objectDataQueryable.ToList();
+
+		if (Model != null && Model.FromAccountId != Guid.Empty)
+		{
+			Data = Data.Where(x => x.Id != Model.FromAccountId);
+		}
+
+	}
+
+	protected override  void OnParametersSet()
+	{
+		if (Model != null && Model.FromAccountId != Guid.Empty)
+		{
+			Data = Data.Where(x => x.Id != Model.FromAccountId);
+		}
+	}
+	protected async Task SelectedBankAccountChanged(BatDemo.Entities.BankAccount selectedItem)
+	{
+		_currentSelected = selectedItem;
+		if (selectedItem != null)
+		{
+			// Invoke the callback with the new value
+			await OnValueChanged.InvokeAsync(selectedItem.Id);
+		}
+	}
+
+
+	RenderFragment GetSelectedItemDescription()
+	{
+		if (_currentSelected != null)
+		{
+			return    @<text>@_currentSelected.AccountNumber</text>;
+		}
+		return @<text>null</text>;
+	}
+
+}
+
+

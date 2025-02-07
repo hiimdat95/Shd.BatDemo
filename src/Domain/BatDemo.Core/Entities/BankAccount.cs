@@ -26,6 +26,8 @@ namespace BatDemo.Entities
         [Required]
         public decimal Balance { get; set; }
 
+        public decimal BlockedAmount { get; set; } = 0;
+
         public virtual ICollection<Transaction> TransactionFroms { get; set; } = new List<Transaction>();
         public virtual ICollection<Transaction> TransactionTos { get; set; } = new List<Transaction>();
     }

@@ -9,6 +9,7 @@
         public const string Users = "Users";
         public const string Roles = "Roles";
         public const string BankAccounts = "BankAccounts";
+        public const string Transactions = "Transactions";
     }
 }
 

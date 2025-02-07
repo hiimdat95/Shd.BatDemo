@@ -16,10 +16,6 @@
     <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="Components\BankAccounts\Editable\DD_Basic\DD_Basic_KieuDuLieuId.razor" />
-    <Content Remove="Components\BankAccounts\Editable\DD_Basic\DD_Basic_NhomChiTieuId.razor" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -49,7 +45,6 @@
     <PackageReference Include="Abp.Castle.Log4Net" Version="9.2.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\BankAccounts\Editable\DD_Basic\" />
     <Folder Include="wwwroot\libs\" />
     <Folder Include="wwwroot\uploads\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />

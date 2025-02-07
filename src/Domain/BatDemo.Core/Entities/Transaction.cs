@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Entities.Auditing;
+using BatDemo.Utils.Enums;
 using Microsoft.EntityFrameworkCore;
+using static BatDemo.Utils.Enums.TransactionEnum;
 
 namespace BatDemo.Entities
 {
@@ -40,12 +42,8 @@ namespace BatDemo.Entities
         public string ToAccountHolderName { get; set; }
 
         [Required]
-        [StringLength(10)]
-        [Unicode(false)]
-        public string TransactionType { get; set; }
-
-        [Required]
         public decimal Amount { get; set; }
+        public TransactionStatusEnum Status { get; set; }
 
         public BankAccount FromAccount { get; set; }
 

@@ -1,0 +1,10 @@
+﻿
+@using BatDemo.Web.Components.Transactions
+@using BatDemo.Web.Startup
+
+@{
+    ViewBag.CurrentPageName = PageNames.Transactions;
+    ViewBag.Title = L("Transaction");
+}
+
+<component type="typeof(TransactionComponent)" render-mode="Server" param-Title="@L("Transaction")" />

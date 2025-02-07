@@ -7,12 +7,12 @@ namespace BatDemo.BankAccounts.Dto
     /// <summary>
     /// 
     /// </summary>
-    public class CfgChiTieuDetailMapProfile : Profile
+    public class BankAccountCrudMapProfile : Profile
     {
         /// <summary>
         /// 
         /// </summary>
-        public CfgChiTieuDetailMapProfile()
+        public BankAccountCrudMapProfile()
         {
             CreateMap<BankAccountCrudDto, BankAccount>();
             CreateMap<BankAccount, BankAccountCrudDto>().ReverseMap();

@@ -1,0 +1,154 @@
+﻿@using DevExpress.Data.Linq
+@using DevExpress.Export
+@using BatDemo.Entities
+@using BatDemo.Transactions
+@using BatDemo.Localization
+@using BatDemo.Web.Components.Common
+@using static BatDemo.Web.Components.Common.BreadcrumbComponent
+
+@inject NavigationManager NavManager
+@inherits OwningComponentBase
+@{
+	string baseUrl = "/transaction";
+	List<BreadcrumbItem> Breadcrumb = [
+			new BreadcrumbItem(@LC.L("Transaction"))
+		];
+}
+
+<section class="content-header">
+	<div class="container-fluid tw-flex tw-items-center tw-justify-between">
+		<BreadcrumbComponent DataItems="Breadcrumb" />
+		<div>
+			<DxButton @onclick="@(() => NavManager.NavigateTo(baseUrl+"/create", true))" SizeMode="SizeMode.Medium">
+				<i class="fa fa-plus-square mr-2"></i>
+				@LC.L("Create")
+			</DxButton>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-body">
+				<div class="grid-container">
+					<DxGrid @ref="Grid"
+							Data="Data"
+							ShowGroupPanel="true"
+							ShowSearchBox="true"
+							VirtualScrollingEnabled="VirtualScrollingEnabled"
+							PageSize="20"
+							PageSizeSelectorVisible="true"
+							PageSizeSelectorItems="[20, 50, 100]"
+							PagerAutoHideNavButtons="false"
+							FilterMenuButtonDisplayMode="GridFilterMenuButtonDisplayMode.Always"
+							ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+						<Columns>
+							<DxGridDataColumn FieldName="FromAccountNumber" Caption="@LC.L("Transaction_FromAccountNumber")" MinWidth="80" />
+							<DxGridDataColumn FieldName="FromAccountHolderName" Caption="@LC.L("Transaction_FromAccountHolderName")" MinWidth="80" />
+
+							<DxGridDataColumn FieldName="ToAccountNumber" Caption="@LC.L("Transaction_ToAccountNumber")" MinWidth="80" />
+							<DxGridDataColumn FieldName="ToAccountHolderName" Caption="@LC.L("Transaction_ToAccountHolderName")" MinWidth="80" />
+
+							<DxGridDataColumn FieldName="Amount" Caption="@LC.L("Transaction_Amount")" MinWidth="80" DisplayFormat="N2" />
+							<DxGridDataColumn FieldName="Status" Caption="@LC.L("Transaction_Status")" MinWidth="80"  />
+							<DxGridDataColumn Name="Actions" Caption="@LC.L("Actions")" AllowSort="false" Width="100" TextAlignment="GridTextAlignment.Center">
+								<CellDisplayTemplate>
+									<div class="Actions">
+										<a href="@($"{baseUrl}/detail?id={((Transaction)context.DataItem).Id}&view=true")"><i class="fas fa-eye" /></a>
+										<i class="fas fa-trash" />
+									</div>
+								</CellDisplayTemplate>
+							</DxGridDataColumn>
+						</Columns>
+						<ToolbarTemplate>
+							<DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+								<Items>
+									<DxToolbarItem Text="@LC.L("ExportXlsx")" Click="ExportXlsx_Click" BeginGroup="true" />
+									<DxToolbarItem Text="@LC.L("ExportXls")" Click="ExportXls_Click" BeginGroup="true" />
+									<DxToolbarItem Text="@LC.L("ExportCsv")" Click="ExportCsv_Click" BeginGroup="true" />
+									<DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+										<Template Context="toolbar_item_context">
+											<div class="d-flex align-items-center h-100 flex-row">
+												<DxCheckBox @bind-Checked="VirtualScrollingEnabled">@LC.L("VirtualScrolling")</DxCheckBox>
+											</div>
+										</Template>
+									</DxToolbarItem>
+								</Items>
+							</DxToolbar>
+						</ToolbarTemplate>
+					</DxGrid>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+@code {
+	[Inject]
+	private ITransactionService transactionService { get; set; }
+
+	[Parameter]
+	public string Title { get; set; }
+
+	private object Data { get; set; }
+	private IGrid Grid { get; set; }
+	bool VirtualScrollingEnabled { get; set; } = false;
+	private bool ExportSelectedRowsOnly { get; set; }
+
+	protected override async Task OnInitializedAsync()
+	{
+
+		var dataSource = new GridDevExtremeDataSource<Transaction>(await transactionService.GetAllQueryableAsync());
+		dataSource.CustomizeLoadOptions = (loadOptions) =>
+		{
+			// If underlying data is a large SQL table, specify PrimaryKey and PaginateViaPrimaryKey.
+			// This can make SQL execution plans more efficient.
+			loadOptions.PrimaryKey = new[] { "Id" };
+			loadOptions.PaginateViaPrimaryKey = true;
+		};
+		Data = dataSource;
+	}
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await Grid.WaitForDataLoadAsync();
+			Grid.ExpandGroupRow(1);
+			await Grid.WaitForDataLoadAsync();
+			Grid.ExpandGroupRow(2);
+		}
+	}
+
+	private async Task ExportXlsx_Click()
+	{
+		await Grid.ExportToXlsxAsync("ExportResult", new GridXlExportOptions()
+			{
+				ExportSelectedRowsOnly = ExportSelectedRowsOnly,
+				// CustomizeCell = OnCustomizeCell
+			});
+	}
+
+	private async Task ExportXls_Click()
+	{
+		await Grid.ExportToXlsAsync("ExportResult", new GridXlExportOptions()
+			{
+				ExportSelectedRowsOnly = ExportSelectedRowsOnly,
+				// CustomizeCell = OnCustomizeCell
+			});
+	}
+
+	private async Task ExportCsv_Click()
+	{
+		await Grid.ExportToCsvAsync("ExportResult", new GridCsvExportOptions()
+			{
+				ExportSelectedRowsOnly = ExportSelectedRowsOnly
+			});
+	}
+
+	// private void OnCustomizeCell(GridExportCustomizeCellEventArgs args)
+	// {
+	//     if (args.ColumnFieldName == "ProjectCode" && args.AreaType == SheetAreaType.DataArea)
+	//         args.Formatting.Font = new XlCellFont() { Italic = true };
+	//     args.Handled = true;
+		// }
+}

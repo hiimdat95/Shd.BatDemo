@@ -139,6 +139,15 @@
 		<text name="BankAccount_AccountNumber" value="AccountNumber" />
 		<text name="BankAccount_AccountHolderName" value="Account Holder Name" />
 		<text name="BankAccount_Balance" value="Balance" />
+
+		<text name="Transaction" value="Transaction" />
+		<text name="Transaction_Id" value="Id" />
+		<text name="Transaction_FromAccountNumber" value="From Account Number" />
+		<text name="Transaction_FromAccountHolderName" value="From Account To Name" />
+		<text name="Transaction_ToAccountNumber" value="To Account Number" />
+		<text name="Transaction_ToAccountHolderName" value="To Account Holder Name" />
+		<text name="Transaction_Amount" value="Amount" />
+		<text name="Transaction_Status" value="Status" />
 	</texts>
 </localizationDictionary>
 

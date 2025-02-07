@@ -1,0 +1,177 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using BatDemo.Transactions
+@using BatDemo.Transactions.Dto
+@using BatDemo.Web.Components.Common
+@using BatDemo.Web.Components.DetailFields
+@using BatDemo.Localization
+@using BatDemo.Web.Components.Transactions.Editable.DD_Basic
+
+@using static BatDemo.Web.Components.Common.BreadcrumbComponent
+@inject NavigationManager NavManager
+@inject IJSRuntime JS
+
+@{
+    List<BreadcrumbItem> Breadcrumb = [
+        new BreadcrumbItem(@LC.L("Transaction"), "/transaction"),
+        new BreadcrumbItem($"{(!Model.Id.HasValue ? @LC.L("Create") : View ? @LC.L("Detail") : @LC.L("Update"))} {@LC.L("Transaction")}")
+    ];
+}
+<section class="content-header">
+    <div class="container-fluid tw-flex tw-items-center tw-justify-between">
+        <BreadcrumbComponent DataItems="Breadcrumb" />
+        <div class="tw-flex tw-gap-3">
+            @if (!View)
+            {
+                <DxButton @onclick="() => Submit()" RenderStyle="ButtonRenderStyle.Primary" Enabled="!Loading" SizeMode="SizeMode.Medium">
+                    @if (Loading)
+                    {
+                        <DxWaitIndicator Visible="Loading" CssClass="tw-mr-2" SizeMode="SizeMode.Small" />
+                    }
+                    else
+                    {
+                        <i class="fas fa-save tw-mr-2 tw-block" />
+                    }
+                    @LC.L("Save")
+                </DxButton>
+            }
+            @if (View)
+            {
+                <DxButton @onclick="HandleGoToEdit" RenderStyle="ButtonRenderStyle.Primary" SizeMode="SizeMode.Medium">
+                    <i class="fas fa-pen tw-mr-2 tw-block" />
+                    @LC.L("Edit")
+                </DxButton>
+            }
+            <DxButton RenderStyle="ButtonRenderStyle.Secondary" @onclick="@(() => NavManager.NavigateTo("/transaction", true))" SizeMode="SizeMode.Medium">
+                <i class="fas fa-chevron-left mr-2"></i>
+                @LC.L("Back")
+            </DxButton>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid tw-pb-4">
+        <div class="card">
+            <div class="tw-px-5 tw-pb-6">
+                @if (View)
+                {
+                    <div class="FormDetail">
+                        <div class="tw-flex tw-gap-4 tw-flex-wrap">
+                            <div class="tw-flex-1">
+                                <DetailFieldTextComponent Label="@LC.L("Transaction_FromAccountNumber")" Value="@(Model.FromAccountNumber)" />
+                                <DetailFieldTextComponent Label="@LC.L("Transaction_FromAccountHolderName")" Value="@(Model.FromAccountHolderName)" />
+                                <DetailFieldTextComponent Label="@LC.L("Transaction_ToAccountNumber")" Value="@(Model.ToAccountNumber)" />
+                                <DetailFieldTextComponent Label="@LC.L("Transaction_ToAccountHolderName")" Value="@(Model.ToAccountHolderName)" />
+                                <DetailFieldNumberComponent Label="@LC.L("Transaction_Balance")" Value="@(Model.Amount)" />
+
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <EditForm @ref="Form" Model="Model"
+                    OnValidSubmit="HandleValidSubmit"
+                    OnInvalidSubmit="HandleInvalidSubmit"
+                    Context="newContext">
+                        <DataAnnotationsValidator />
+                        <DxFormLayout CssClass="Form" CaptionPosition="CaptionPosition.Vertical">
+                            <DxFormLayoutItem Caption="@LC.L("Transaction_FromAccountNumber")" ColSpanLg="6" ColSpanMd="6" CssClass="Required">
+                                <CascadingValue Value="Model">
+                                    <DD_Basic_FromAccountId OnValueChanged="HandleValueFromAccountChanged" IsCreate="@IsCreate" />
+                                </CascadingValue>
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@LC.L("Transaction_ToAccountNumber")" ColSpanLg="6" ColSpanMd="6" CssClass="Required">
+                                <CascadingValue Value="Model">
+                                    <DD_Basic_ToAccountId OnValueChanged="HandleValueToAccountChanged" IsCreate="@IsCreate" />
+                                </CascadingValue>
+                            </DxFormLayoutItem>
+
+                            <DxFormLayoutItem Caption="@LC.L("Transaction_Amount")" ColSpanLg="6" ColSpanMd="6">
+                                <DxSpinEdit @bind-Value="Model.Amount" NullText="@LC.L("Transaction_Amount")" ShowValidationIcon="true" />
+                                <ValidationMessage For="@(() => Model.Amount)" />
+                            </DxFormLayoutItem>
+
+                        </DxFormLayout>
+                    </EditForm>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    [Inject]
+    private ITransactionService service { get; set; }
+
+    [Parameter]
+    public bool View { get; set; }
+    [Parameter]
+    public TransactionDto Detail { get; set; }
+
+    public TransactionDto Model { get; set; }
+
+    private EditForm Form;
+    private bool Loading = false;
+    private bool IsCreate = true;
+
+    protected override void OnInitialized()
+    {
+        Model = Detail;
+        if (Detail.Id.HasValue)
+        {
+            IsCreate = false;
+        }
+        base.OnInitialized();
+    }
+
+    public async void Submit()
+    {
+        bool isValid = Form.EditContext.Validate();
+        if (isValid) await HandleValidSubmit();
+        else await HandleInvalidSubmit();
+    }
+
+    async Task HandleValidSubmit()
+    {
+        // Loading = true;
+        StateHasChanged();
+
+        var result = await service.CreateAsync(Model);
+        if(result.Success){
+            await JS.InvokeVoidAsync($"toastr.success", $"Create a Transaction successfully!");
+        }
+        else{
+            await JS.InvokeVoidAsync($"toastr.error", $"Create a Transaction failed!");
+        }
+        
+        // Loading = false;
+
+        NavManager.NavigateTo($"/transaction");
+        NavManager.Refresh();
+    }
+
+    async Task HandleInvalidSubmit()
+    {
+        await JS.InvokeVoidAsync("toastr.error", "Check your input!");
+        // _ = FocusFirstError();
+    }
+
+    private void HandleGoToEdit()
+    {
+        View = false;
+        var id = Model.Id.HasValue ? Model.Id.Value.ToString() : string.Empty;
+        NavManager.NavigateTo($"/transaction/detail?id={id}");
+        StateHasChanged();
+    }
+
+    private void HandleValueFromAccountChanged(Guid id)
+    {
+        Model.FromAccountId = id;
+    }
+
+    private void HandleValueToAccountChanged(Guid id)
+    {
+        Model.ToAccountId = id;
+    }
+}
