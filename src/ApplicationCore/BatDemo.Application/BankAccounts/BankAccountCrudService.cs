@@ -78,6 +78,11 @@ namespace BatDemo.BankAccounts
         {
             try
             {
+                var resultValidate = await ValidateExitedAccountNumberAsync(model.AccountNumber);
+                if (!resultValidate.Success)
+                {
+                    return BadRequestWithResult<BankAccountCrudDto>("400", resultValidate.Message);
+                }
                 var entity = ObjectMapper.Map<BankAccount>(model);
                 var id = await _writeRepository.InsertAndGetIdAsync(entity);
                 model.Id = id;
@@ -90,7 +95,29 @@ namespace BatDemo.BankAccounts
                 return ServerErrorWithResult<BankAccountCrudDto>("500", ex.Message.ToString());
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountNumber"></param>
+        /// <returns></returns>
+        [UnitOfWork(isTransactional: false)]
+        public async Task<ServiceResponse> ValidateExitedAccountNumberAsync(string accountNumber)
+        {
+            try
+            {
+                var lstBankAccount = await _readRepository.GetAllListAsync(x=>x.AccountNumber == accountNumber && !x.IsDeleted);
+                if (lstBankAccount.Any())
+                {
+                    return BadRequest("400", "Accout number has been exited. Please input other account number");
+                }
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex.Message.ToString(), ex);
+                return ServerError("500", ex.Message.ToString());
+            }
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -105,6 +132,11 @@ namespace BatDemo.BankAccounts
                 if (entity == null)
                 {
                     return NotFoundWithResult<BankAccountCrudDto>("404", "Not found");
+                }
+                var resultValidate = await ValidateExitedAccountNumberAsync(model.AccountNumber);
+                if (!resultValidate.Success)
+                {
+                    return BadRequestWithResult<BankAccountCrudDto>("400", resultValidate.Message);
                 }
                 ObjectMapper.Map(model, entity);
                 using (var unitOfWork = UnitOfWorkManager.Begin())

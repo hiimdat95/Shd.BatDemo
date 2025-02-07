@@ -37,5 +37,11 @@ namespace BatDemo.BankAccounts
         /// <param name="model"></param>
         /// <returns></returns>
         Task<ServiceResponse<BankAccountCrudDto>> UpdateAsync(BankAccountCrudDto model);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountNumber"></param>
+        /// <returns></returns>
+        Task<ServiceResponse> ValidateExitedAccountNumberAsync(string accountNumber);
     }
 }

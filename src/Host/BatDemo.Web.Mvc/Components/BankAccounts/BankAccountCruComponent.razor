@@ -123,7 +123,18 @@
 	public async void Submit()
 	{
 		bool isValid = Form.EditContext.Validate();
-		if (isValid) await HandleValidSubmit();
+		if (isValid)
+		{
+			var resultValidate = await service.ValidateExitedAccountNumberAsync(Model.AccountNumber);
+			if (!resultValidate.Success)
+			{
+				await JS.InvokeVoidAsync($"toastr.error", resultValidate.Message);
+			}
+			else
+			{
+				await HandleValidSubmit();
+			}
+		}
 		else await HandleInvalidSubmit();
 	}
 
@@ -131,11 +142,14 @@
 	{
 		// Loading = true;
 		StateHasChanged();
+
+
 		ServiceResponse<BankAccountCrudDto> result;
 		if (!Model.Id.HasValue)
 		{
 			result = await service.CreateAsync(Model);
 			Model.Id = result.Data.Id;
+
 		}
 		else
 		{
@@ -147,7 +161,7 @@
 		}
 		else
 		{
-			await JS.InvokeVoidAsync($"toastr.error", $"Create a BankAccount failed!");
+			await JS.InvokeVoidAsync($"toastr.error", result.Message);
 		}
 
 		NavManager.NavigateTo($"/bank-account");
