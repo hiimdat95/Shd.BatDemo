@@ -73,6 +73,8 @@ test/BatDemo.Web.Tests/obj/
 .vs/
 src/Host/BatDemo.Web.Host/App_Data/Logs/
 src/Host/BatDemo.Web.Mvc/App_Data/Logs/
-src/Host/BatDemo.Web.Mvc/wwwroot/files/10000_DumpData_CamKetNgb.json
 src/Host/BatDemo.Web.Mvc/wwwroot/files/
 src/Host/BatDemo.Web.Mvc/wwwroot/reports/
+src/Host/BatDemo.Web.Mvc/wwwroot/css/devextreme
+src/Host/BatDemo.Web.Mvc/wwwroot/js/devextreme
+

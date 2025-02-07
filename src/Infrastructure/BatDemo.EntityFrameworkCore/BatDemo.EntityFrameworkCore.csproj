@@ -27,8 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EntityFrameworkCore\Customs\" />
-    <Folder Include="EntityFrameworkCore\Repositories\Gen\Read\" />
-    <Folder Include="EntityFrameworkCore\Repositories\Gen\Write\" />
   </ItemGroup>
 </Project>
 
