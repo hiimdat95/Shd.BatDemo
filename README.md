@@ -32,4 +32,5 @@ Thực hiện các bước dưới đây để build project và chạy
 2. Check the connection string in the appsettings.json file of the Web.Mvc project, change it if you want.
 3. Open Package Manager Console and run the Update-Database command to create your database (ensure that the Default project is selected as .EntityFrameworkCore in the Package Manager Console window).
 4. Run the application.
+5. Login with account: admin/123qwe
 ---
