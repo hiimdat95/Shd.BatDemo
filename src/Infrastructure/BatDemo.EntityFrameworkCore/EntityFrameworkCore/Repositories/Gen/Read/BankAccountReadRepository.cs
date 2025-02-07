@@ -7,9 +7,9 @@ using System;
 
 namespace BatDemo.EntityFrameworkCore.Repositories.Gen.Read
 {
-    public class AccountReadRepository : ReadRepository<Account, Guid>, IAccountReadRepository
+    public class BankAccountReadRepository : ReadRepository<BankAccount, Guid>, IBankAccountReadRepository
     {
-        public AccountReadRepository(IDbContextProvider<BatDemoDbContext> dbContextProvider, CustomizedReadOnlyDbContextFactory customDbContextFactory) 
+        public BankAccountReadRepository(IDbContextProvider<BatDemoDbContext> dbContextProvider, CustomizedReadOnlyDbContextFactory customDbContextFactory) 
             : base(dbContextProvider, customDbContextFactory)
         {
         }

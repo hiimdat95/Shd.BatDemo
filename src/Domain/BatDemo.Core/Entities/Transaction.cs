@@ -47,9 +47,9 @@ namespace BatDemo.Entities
         [Required]
         public decimal Amount { get; set; }
 
-        public Account FromAccount { get; set; }
+        public BankAccount FromAccount { get; set; }
 
-        public Account ToAccount { get; set; }
+        public BankAccount ToAccount { get; set; }
 
     }
 }

@@ -15,14 +15,14 @@ namespace BatDemo.EntityFrameworkCore
             : base(options)
         {
         }
-        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<BankAccount> Accounts { get; set; }
         public virtual DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Account>(entity =>
+            modelBuilder.Entity<BankAccount>(entity =>
             {
-                entity.HasKey(e => e.Id).HasName("ACCOUNT_PK");
+                entity.HasKey(e => e.Id).HasName("BANKACCOUNT_PK");
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
             });
             modelBuilder.Entity<Transaction>(entity =>
@@ -34,11 +34,11 @@ namespace BatDemo.EntityFrameworkCore
                 entity.HasOne(d => d.FromAccount).WithMany(p => p.TransactionFroms)
                     .HasForeignKey(d => d.FromAccountId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("TRANSACTION_FROMACCOUNT_ACCOUNT_FK");        
+                    .HasConstraintName("TRANSACTION_FROMACCOUNT_BANKACCOUNT_FK");        
                 entity.HasOne(d => d.ToAccount).WithMany(p => p.TransactionTos)
                     .HasForeignKey(d => d.ToAccountId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("TRANSACTION_TOACCOUNT_ACCOUNT_FK");
+                    .HasConstraintName("TRANSACTION_TOACCOUNT_BANKACCOUNT_FK");
             });
             base.OnModelCreating(modelBuilder);
             OnModelCreatingPartial(modelBuilder);

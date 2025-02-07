@@ -1,30 +1,30 @@
 ﻿using Abp.Application.Services;
 using Abp.Domain.Uow;
 using BatDemo.Entities;
-using BatDemo.Accounts.Dto;
+using BatDemo.BankAccounts.Dto;
 using BatDemo.Repositories.Gen.Read;
 using BatDemo.Repositories.Gen.Write;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BatDemo.Accounts
+namespace BatDemo.BankAccounts
 {
     /// <summary>
     /// 
     /// </summary>
-    public class AccountCrudService : ApplicationService, IAccountCrudService
+    public class BankAccountCrudService : ApplicationService, IBankAccountCrudService
     {
-        private readonly IAccountWriteRepository _writeRepository;
-        private readonly IAccountReadRepository _readRepository;
+        private readonly IBankAccountWriteRepository _writeRepository;
+        private readonly IBankAccountReadRepository _readRepository;
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="writeRepository"></param>
         /// <param name="readRepository"></param>
-        public AccountCrudService(IAccountReadRepository readRepository
-                , IAccountWriteRepository writeRepository)
+        public BankAccountCrudService(IBankAccountReadRepository readRepository
+                , IBankAccountWriteRepository writeRepository)
         {
             _readRepository = readRepository;
             _writeRepository = writeRepository;
@@ -35,7 +35,7 @@ namespace BatDemo.Accounts
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public Task<IQueryable<Account>> GetAllQueryableAsync()
+        public Task<IQueryable<BankAccount>> GetAllQueryableAsync()
         {
             return _readRepository.GetAllQueryableAsync();
         }
@@ -46,14 +46,14 @@ namespace BatDemo.Accounts
         /// <param name="id"></param>
         /// <returns></returns>
         [UnitOfWork(isTransactional: false)]
-        public async Task<AccountCrudDto> GetDetailAsync(Guid id)
+        public async Task<BankAccountCrudDto> GetDetailAsync(Guid id)
         {
             try
             {
                 var entity = await _readRepository.GetAsync(id);
                 if(entity != null)
                 {
-                    return ObjectMapper.Map<AccountCrudDto>(entity);
+                    return ObjectMapper.Map<BankAccountCrudDto>(entity);
                 }
                 else
                 {
@@ -73,11 +73,11 @@ namespace BatDemo.Accounts
         /// <param name="model"></param>
         /// <returns></returns>
         [UnitOfWork(isTransactional: false)]
-        public async Task<Guid?> CreateAsync(AccountCrudDto model)
+        public async Task<Guid?> CreateAsync(BankAccountCrudDto model)
         {
             try
             {
-                var entity = ObjectMapper.Map<Account>(model);
+                var entity = ObjectMapper.Map<BankAccount>(model);
                 var id = await _writeRepository.InsertAndGetIdAsync(entity);
                 return id;
             }
@@ -94,7 +94,7 @@ namespace BatDemo.Accounts
         /// <param name="model"></param>
         /// <returns></returns>
         [UnitOfWork(isTransactional: false)]
-        public async Task<Guid?> UpdateAsync(AccountCrudDto model)
+        public async Task<Guid?> UpdateAsync(BankAccountCrudDto model)
         {
             try
             {

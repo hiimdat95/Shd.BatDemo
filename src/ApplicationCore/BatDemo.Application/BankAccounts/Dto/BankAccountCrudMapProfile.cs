@@ -2,7 +2,7 @@
 using AutoMapper;
 using BatDemo.Entities;
 
-namespace BatDemo.Accounts.Dto
+namespace BatDemo.BankAccounts.Dto
 {
     /// <summary>
     /// 
@@ -14,8 +14,8 @@ namespace BatDemo.Accounts.Dto
         /// </summary>
         public CfgChiTieuDetailMapProfile()
         {
-            CreateMap<AccountCrudDto, Account>();
-            CreateMap<Account, AccountCrudDto>().ReverseMap();
+            CreateMap<BankAccountCrudDto, BankAccount>();
+            CreateMap<BankAccount, BankAccountCrudDto>().ReverseMap();
         }
     }
 }

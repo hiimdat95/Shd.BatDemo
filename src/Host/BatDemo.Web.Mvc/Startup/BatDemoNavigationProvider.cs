@@ -53,7 +53,14 @@ namespace BatDemo.Web.Startup
                             permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Roles)
                         )
                     )
-                )
+                ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.BankAccounts,
+                            L("BankAccount"),
+                            url: "bank-account",
+                            icon: "fas fa-theater-masks"
+                        )
+                    )
                 /*.AddItem( // Menu items below is just for demonstration!
                     new MenuItemDefinition(
                         "MultiLevelMenu",

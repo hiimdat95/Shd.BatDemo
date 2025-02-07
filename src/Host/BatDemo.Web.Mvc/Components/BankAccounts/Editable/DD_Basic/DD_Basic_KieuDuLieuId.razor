@@ -1,0 +1,108 @@
+﻿@using Htbc.DmKieuDuLieus
+@using Htbc.EntityFrameworkCore.Repositories.Gen.Read
+@using Htbc.Localization
+@using Newtonsoft.Json
+@using Htbc.Repositories.Gen.Read
+@using Htbc.Validation
+
+@if (IsView)
+{
+    <div class="DetailField">
+        <span class="col-md-3 col-form-label">@LC.L("DmKieuDuLieu_TEN") :</span>
+        <span class="col-md-9 tw-flex tw-items-center">@GetSelectedItemDescription()</span>
+    </div>
+
+}
+else
+{
+    <DxComboBox Data="@Data"
+                TextFieldName="@nameof(Htbc.Entities.DmKieuDuLieu.Ten)"
+                ValueFieldName="Id"
+                Value="@_currentSelected"
+                ValueChanged="@((Htbc.Entities.DmKieuDuLieu itemSelected) => SelectedDmKieuDuLieuChanged(itemSelected))"
+                ValueExpression="@(() => _currentSelected)"
+                CssClass="cw-480"
+                InputId="CFG_CHI_TIEU_KIEU_DU_LIEU_ID" />
+    <p class="demo-text cw-480 mt-3" style="display:none">
+        <b>Selected item: </b>
+    <p>@GetSelectedItemDescription()</p>
+                </p>
+}
+
+@code {
+
+
+
+    //[CascadingParameter]
+    //SelectedItem Object
+    //object Value { get; set; }
+
+    [CascadingParameter]
+    public long? _SelectedID { get; set; }
+
+    private Htbc.Entities.DmKieuDuLieu _currentSelected { get; set; }
+
+    [Parameter]
+    public EventCallback<long> OnValueChanged { get; set; }
+
+    [Parameter]
+    public bool IsCreate { get; set; }
+
+    [Parameter]
+    public bool IsView { get; set; }
+    [Inject]
+    private IDmKieuDuLieuCruService _dmKieuDuLieuCruService { get; set; }
+
+    IEnumerable<Htbc.Entities.DmKieuDuLieu> Data { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Data = (await _iDmKieuDuLieuService.GetAllQueryableAsync()).ToList();
+        //Value = Data.FirstOrDefault();
+
+        var objectDataQueryable = await _dmKieuDuLieuCruService.GetAllQueryableAsync();
+        Data = objectDataQueryable.ToList();
+
+
+        if (_SelectedID.HasValue)
+        {
+            _currentSelected = objectDataQueryable.Where(item => item.Id == _SelectedID).FirstOrDefault();
+        }
+        else
+        {
+            if (IsCreate)
+            {
+                _currentSelected = objectDataQueryable.FirstOrDefault();
+            }
+        }
+        if (_currentSelected != null)
+        {
+            await OnValueChanged.InvokeAsync(_currentSelected.Id);
+        }
+
+    }
+
+    protected async Task SelectedDmKieuDuLieuChanged(Htbc.Entities.DmKieuDuLieu selectedItem)
+    {
+        _currentSelected = selectedItem;
+        if (selectedItem != null)
+        {
+            _SelectedID = _currentSelected.Id;
+            // Invoke the callback with the new value
+            await OnValueChanged.InvokeAsync(_SelectedID.Value);
+        }
+    }
+
+
+    RenderFragment GetSelectedItemDescription()
+    {
+        if (_currentSelected != null)
+        {
+            return    @<text>@_currentSelected.Ten</text>;
+        }
+        return @<text>null</text>;
+    }
+
+}
+
+

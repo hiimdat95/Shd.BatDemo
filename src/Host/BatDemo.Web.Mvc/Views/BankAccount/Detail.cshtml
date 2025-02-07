@@ -1,0 +1,10 @@
+﻿@using BatDemo.BankAccounts.Dto
+@using BatDemo.Web.Components.BankAccounts
+@using BatDemo.Web.Startup
+@model BankAccountCrudDto
+@{
+    ViewBag.CurrentPageName = PageNames.BankAccounts;
+    ViewBag.Title = L("BankAccount");
+    var isView = ViewBag.IsView;
+}
+<component type="typeof(BankAccountCruComponent)" render-mode="Server" param-Detail="Model" param-View="isView" />

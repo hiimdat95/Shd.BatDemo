@@ -7,9 +7,9 @@ using System;
 
 namespace BatDemo.EntityFrameworkCore.Repositories.Gen.Write
 {
-    public class AccountWriteRepository: WriteRepository<Account, Guid>, IAccountWriteRepository
+    public class BankAccountWriteRepository: WriteRepository<BankAccount, Guid>, IBankAccountWriteRepository
     {
-        public AccountWriteRepository(IDbContextProvider<BatDemoDbContext> dbContextProvider) : base(dbContextProvider)
+        public BankAccountWriteRepository(IDbContextProvider<BatDemoDbContext> dbContextProvider) : base(dbContextProvider)
         {
         }
     }

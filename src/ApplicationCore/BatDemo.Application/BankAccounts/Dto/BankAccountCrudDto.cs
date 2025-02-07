@@ -3,12 +3,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BatDemo.Accounts.Dto
+namespace BatDemo.BankAccounts.Dto
 {
     /// <summary>
     ///
     /// </summary>
-    public class AccountCrudDto
+    public class BankAccountCrudDto
     {
         /// <summary>
         /// 

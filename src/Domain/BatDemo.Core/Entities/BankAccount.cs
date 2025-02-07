@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BatDemo.Entities
 {
-    [Table("Accounts")]
-    public class Account : FullAuditedEntity<Guid>
+    [Table("BankAccounts")]
+    public class BankAccount : FullAuditedEntity<Guid>
     {
         [Required]
         [StringLength(50)]

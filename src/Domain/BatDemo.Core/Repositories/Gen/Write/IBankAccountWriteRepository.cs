@@ -4,7 +4,7 @@ using System;
 
 namespace BatDemo.Repositories.Gen.Write
 {
-    public interface IAccountWriteRepository: IWriteRepository<Account, Guid>
+    public interface IBankAccountWriteRepository: IWriteRepository<BankAccount, Guid>
     {
     }
 }

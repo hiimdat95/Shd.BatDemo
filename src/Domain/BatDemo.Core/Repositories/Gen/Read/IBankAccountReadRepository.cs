@@ -4,7 +4,7 @@ using BatDemo.Entities;
 
 namespace BatDemo.Repositories.Gen.Read
 {
-    public interface IAccountReadRepository : IReadRepository<Account, Guid>
+    public interface IBankAccountReadRepository : IReadRepository<BankAccount, Guid>
     {
 
     }

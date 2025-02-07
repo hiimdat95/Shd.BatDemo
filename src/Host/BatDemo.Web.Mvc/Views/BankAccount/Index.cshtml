@@ -1,0 +1,10 @@
+﻿
+@using BatDemo.Web.Components.BankAccounts
+@using BatDemo.Web.Startup
+
+@{
+    ViewBag.CurrentPageName = PageNames.BankAccounts;
+    ViewBag.Title = L("BankAccount");
+}
+
+<component type="typeof(BankAccountComponent)" render-mode="Server" param-Title="@L("BankAccount")" />

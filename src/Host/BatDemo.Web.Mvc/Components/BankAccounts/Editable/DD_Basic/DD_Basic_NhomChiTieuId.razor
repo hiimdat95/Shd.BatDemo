@@ -1,0 +1,106 @@
+﻿
+@using Htbc.CfgNhomChiTieus
+@using Htbc.EntityFrameworkCore.Repositories.Gen.Read
+@using Htbc.Localization
+@using Newtonsoft.Json
+@using Htbc.Repositories.Gen.Read
+@using Htbc.Validation
+
+@if (IsView)
+{
+    <div class="DetailField">
+        <span class="col-md-3 col-form-label">@LC.L("CfgNhomChiTieu_TEN") :</span>
+        <span class="col-md-9 tw-flex tw-items-center">@GetSelectedItemDescription()</span>
+    </div>
+
+}
+else
+{
+    <DxComboBox Data="@Data"
+                TextFieldName="@nameof(Htbc.Entities.CfgNhomChiTieu.Ten)"
+                 ValueFieldName="Id" 
+                 Value="@_currentSelected"
+                 ValueChanged="@((Htbc.Entities.CfgNhomChiTieu itemSelected) => SelectedCfgNhomChiTieuChanged(itemSelected))"
+                 ValueExpression="@(() => _currentSelected)"
+                CssClass="cw-480"
+                InputId="CFG_CHI_TIEU_NHOM_CHI_TIEU_ID"/>
+    <p class="demo-text cw-480 mt-3" style="display:none">
+        <b>Selected item: </b> <p>@GetSelectedItemDescription()</p>
+    </p>
+}
+
+@code {
+
+     
+        
+    //[CascadingParameter]
+    //SelectedItem Object
+    //object Value { get; set; }
+    
+    [CascadingParameter]
+    public long? _SelectedID { get; set; }
+
+    private Htbc.Entities.CfgNhomChiTieu _currentSelected{ get; set; }
+    
+    [Parameter]
+    public EventCallback<long> OnValueChanged { get; set; }
+    
+    [Parameter]
+    public bool IsCreate { get; set; }
+    
+    [Parameter]
+    public bool IsView { get; set; }
+    [Inject]
+    private ICfgNhomChiTieuCruService _cfgNhomChiTieuCruService { get; set; }
+    
+    IEnumerable<Htbc.Entities.CfgNhomChiTieu> Data { get; set; }
+ 
+    protected override async Task OnInitializedAsync() {
+        //Data = (await _iCfgNhomChiTieuService.GetAllQueryableAsync()).ToList();
+        //Value = Data.FirstOrDefault();
+        
+         var objectDataQueryable = await _cfgNhomChiTieuCruService.GetAllQueryableAsync();
+         Data = objectDataQueryable.ToList();
+     
+     
+        if (_SelectedID.HasValue)
+        {
+            _currentSelected = objectDataQueryable.Where(item => item.Id == _SelectedID).FirstOrDefault();
+        }
+        else
+        {
+            if (IsCreate)
+            {
+                _currentSelected = objectDataQueryable.FirstOrDefault();
+            }
+        }
+        if (_currentSelected != null)
+        {
+            await OnValueChanged.InvokeAsync(_currentSelected.Id);
+        }
+        
+    }
+    
+     protected async Task SelectedCfgNhomChiTieuChanged(Htbc.Entities.CfgNhomChiTieu selectedItem)
+     {
+         _currentSelected = selectedItem;
+         if(selectedItem != null)
+         {
+             _SelectedID = _currentSelected.Id;
+            // Invoke the callback with the new value
+            await OnValueChanged.InvokeAsync(_SelectedID.Value);
+         }
+     }
+    
+    
+    RenderFragment GetSelectedItemDescription() {
+        if (_currentSelected != null)
+         {
+             return    @<text>@_currentSelected.Ten</text>;
+         }
+         return @<text>null</text>; 
+    }
+   
+}
+
+

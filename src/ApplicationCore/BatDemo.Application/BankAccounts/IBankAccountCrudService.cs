@@ -1,41 +1,41 @@
 ﻿using Abp.Application.Services;
-using BatDemo.Accounts.Dto;
+using BatDemo.BankAccounts.Dto;
 using BatDemo.Entities;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BatDemo.Accounts
+namespace BatDemo.BankAccounts
 {
     /// <summary>
     /// 
     /// </summary>
-    public interface IAccountCrudService : IApplicationService
+    public interface IBankAccountCrudService : IApplicationService
     {
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        Task<IQueryable<Account>> GetAllQueryableAsync();
+        Task<IQueryable<BankAccount>> GetAllQueryableAsync();
     
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<AccountCrudDto> GetDetailAsync(Guid id);
+        Task<BankAccountCrudDto> GetDetailAsync(Guid id);
         
         /// <summary>
         /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<Guid?> CreateAsync(AccountCrudDto model);
+        Task<Guid?> CreateAsync(BankAccountCrudDto model);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        Task<Guid?> UpdateAsync(AccountCrudDto model);
+        Task<Guid?> UpdateAsync(BankAccountCrudDto model);
     }
 }

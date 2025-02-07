@@ -4,6 +4,7 @@ using BatDemo.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BatDemo.Migrations
 {
     [DbContext(typeof(BatDemoDbContext))]
-    partial class BatDemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250207041043_Change Accounts table to BankAccounts table")]
+    partial class ChangeAccountstabletoBankAccountstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
